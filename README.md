@@ -2,6 +2,13 @@
 
 一个纯静态网站：不需要 Node、不需要构建，双击 `index.htm` 就能打开。
 
+**在线访问：** https://madoka-git.github.io/yumao-site/
+
+- 仓库地址：https://github.com/madoka-git/yumao-site
+- 部署方式：GitHub Pages，`main` 分支根目录直接发布
+- 根目录的 `.nojekyll` 用于关闭 Jekyll 处理，纯静态文件原样输出
+- 向 `main` 提交并推送后，约 1 分钟自动重新发布
+
 ## 目录结构
 
 ```
