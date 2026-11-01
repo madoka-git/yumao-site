@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>领养登记 · 屿猫</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.htm"><span class="logo" aria-hidden="true"><img src="../assets/img/logo.svg" alt=""></span><b>屿猫</b></a>
+    <nav class="nav">
+      <a href="../breeds/index.htm">品种图鉴</a>
+      <a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a>
+      <a href="../guide/index.htm">选猫指南</a>
+      <a href="../tools/index.htm">养猫工具</a>
+      <a class="on" href="adopt.htm">领养登记</a>
+    </nav>
+    <div class="top-actions"><a href="login.htm">登录</a><a class="reg" href="register.htm">注册</a></div>
+  </div>
+</div>
+
+<div class="auth-wrap" style="max-width:760px;">
+  <div class="form-card reveal">
+    <h1>猫咪领养咨询登记</h1>
+    <p class="lead">如果您有意向领养一只猫，请认真填写以下信息。带 <span style="color:#a8442f;">*</span> 的为必填项，我们会尽快联系你。</p>
+
+    <form action="#" method="post" style="margin-top:18px;">
+      <fieldset>
+        <legend>基本信息</legend>
+        <div class="field">
+          <label for="name">姓名 <span style="color:#a8442f;">*</span></label>
+          <input class="input" type="text" id="name" name="name" placeholder="请输入您的姓名" required>
+        </div>
+        <div class="field">
+          <label for="phone">联系电话 <span style="color:#a8442f;">*</span></label>
+          <input class="input" type="tel" id="phone" name="phone" placeholder="请输入手机号码" required>
+        </div>
+        <div class="field">
+          <label for="email">电子邮箱</label>
+          <input class="input" type="email" id="email" name="email" placeholder="请输入邮箱地址">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>领养意向</legend>
+        <div class="field">
+          <label for="breed">意向猫咪品种 <span style="color:#a8442f;">*</span></label>
+          <select class="input" id="breed" name="breed" required>
+            <option value="">请选择品种</option>
+            <optgroup label="短毛 / 常见家猫">
+              <option value="british">英国短毛猫</option>
+              <option value="american_shorthair">美短起司</option>
+              <option value="orange_cat">橘猫</option>
+              <option value="siamese">暹罗猫</option>
+              <option value="exotic_shorthair">加菲猫</option>
+              <option value="golden_british">金渐层</option>
+              <option value="scottish_fold">苏格兰折耳猫</option>
+            </optgroup>
+            <optgroup label="长毛">
+              <option value="ragdoll">布偶猫</option>
+              <option value="maine_coon">缅因猫</option>
+              <option value="persian">波斯猫</option>
+            </optgroup>
+            <optgroup label="特殊被毛">
+              <option value="sphynx">无毛猫</option>
+              <option value="devon_rex">德文卷毛猫</option>
+            </optgroup>
+            <option value="other">其他品种 / 不确定</option>
+          </select>
+          <p style="margin:6px 0 0;font-size:12.5px;line-height:1.8;color:var(--muted);">
+            还没想好？可以先看 <a href="../breeds/index.htm" style="color:var(--link);border-bottom:1px solid #e6c9a0;">12 种猫咪档案</a>，
+            或做一次 <a href="../guide/index.htm" style="color:var(--link);border-bottom:1px solid #e6c9a0;">选猫测试</a>。
+          </p>
+        </div>
+        <div class="field">
+          <label>居住情况 <span style="color:#a8442f;">*</span></label>
+          <div class="radio-row">
+            <label><input type="radio" name="house" value="own" required> 自有住房</label>
+            <label><input type="radio" name="house" value="rent"> 租房</label>
+            <label><input type="radio" name="house" value="family"> 与家人同住</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>是否有养猫经验</label>
+          <div class="radio-row">
+            <label><input type="radio" name="experience" value="yes"> 有</label>
+            <label><input type="radio" name="experience" value="no"> 没有</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>家中是否有其他宠物（可多选）</label>
+          <div class="check-row">
+            <label><input type="checkbox" name="pet" value="dog"> 狗</label>
+            <label><input type="checkbox" name="pet" value="cat"> 猫</label>
+            <label><input type="checkbox" name="pet" value="other"> 其他</label>
+            <label><input type="checkbox" name="pet" value="none"> 没有</label>
+          </div>
+        </div>
+        <div class="field">
+          <label for="date">预计领养时间</label>
+          <input class="input" type="date" id="date" name="date">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>补充说明</legend>
+        <div class="field">
+          <label for="message">留言 / 补充说明</label>
+          <textarea class="input" id="message" name="message" rows="4" placeholder="请填写您想了解的问题或其他说明..."></textarea>
+        </div>
+      </fieldset>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">提交登记</button>
+        <button type="reset" class="btn-reset">重置表单</button>
+      </div>
+      <p class="form-note">提交后我们会根据居住条件、陪伴时间和养猫经验做匹配，不是先到先得。所有信息仅用于领养沟通。</p>
+    </form>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="f-brand">屿猫</div><p class="f-note">认识一只猫，从看它开始。</p></div>
+    <div class="footer-links">
+      <div><b>逛逛</b><a href="../breeds/index.htm">品种图鉴</a><a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a><a href="../stories.htm">领养故事</a></div>
+      <div><b>参与</b><a href="../breeds/compare.htm">品种对比</a><a href="../guide/index.htm">选猫指南</a><a href="../tools/index.htm">养猫工具</a><a href="adopt.htm">领养登记</a></div>
+      <div><b>联系</b><a href="../about.htm">关于我们</a><a href="mailto:cat_web@demo.com">cat_web@demo.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 屿猫 · 本站品种资料与饲养建议仅供日常参考。</span><span>猫咪健康问题请咨询执业兽医。</span></div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<script src="../assets/js/site.js" defer></script>
+
+</body>
+</html>

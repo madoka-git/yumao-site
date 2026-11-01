@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>选猫指南 · 屿猫</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.htm"><span class="logo" aria-hidden="true"><img src="../assets/img/logo.svg" alt=""></span><b>屿猫</b></a>
+    <nav class="nav">
+      <a href="../breeds/index.htm">品种图鉴</a>
+      <a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a>
+      <a class="on" href="index.htm">选猫指南</a>
+      <a href="../tools/index.htm">养猫工具</a>
+      <a href="../account/adopt.htm">领养登记</a>
+    </nav>
+    <div class="top-actions"><a href="../account/login.htm">登录</a><a class="reg" href="../account/register.htm">注册</a></div>
+  </div>
+</div>
+
+<div class="page-head reveal">
+  <h1>选猫指南</h1>
+  <p>六个问题，帮你找到更合拍的那一只。没有标准答案，只有更适合你的生活节奏。</p>
+</div>
+
+<div class="quiz-wrap">
+  <div class="quiz-card">
+    <div class="quiz-progress" id="progress">
+<i class="on"></i>
+<i></i>
+<i></i>
+<i></i>
+<i></i>
+<i></i>
+    </div>
+
+    <section class="q on" data-step="1">
+      <h2>你每天大概有多少时间陪猫？</h2>
+      <p>按工作日平均算，不用把周末加进去。</p>
+      <div class="opts">
+        <button class="opt" data-british="3" data-scottish_fold="3" data-persian="2" data-exotic_shorthair="2" data-golden_british="2" data-american_shorthair="1" data-orange_cat="1"><span class="idx">A</span><span><b>2–4 小时，白天基本不在家</b><span>上班族节奏，希望猫能自己待着</span></span></button>
+        <button class="opt" data-ragdoll="2" data-orange_cat="2" data-american_shorthair="2" data-siamese="2" data-maine_coon="1" data-devon_rex="1" data-sphynx="1"><span class="idx">B</span><span><b>4–8 小时，晚上能陪它玩</b><span>下班后有时间互动</span></span></button>
+        <button class="opt" data-ragdoll="3" data-siamese="3" data-sphynx="3" data-devon_rex="2" data-maine_coon="2" data-orange_cat="1"><span class="idx">C</span><span><b>几乎全天在家</b><span>自由职业、居家办公或退休</span></span></button>
+      </div>
+    </section>
+
+    <section class="q" data-step="2">
+      <h2>你住的地方是什么样？</h2>
+      <p>空间大小会影响猫的活动方式和你能接受的体型。</p>
+      <div class="opts">
+        <button class="opt" data-british="3" data-scottish_fold="2" data-golden_british="2" data-exotic_shorthair="2" data-persian="1" data-sphynx="1" data-american_shorthair="1"><span class="idx">A</span><span><b>小户型或合租</b><span>空间有限，更看重安静和适应力</span></span></button>
+        <button class="opt" data-american_shorthair="2" data-orange_cat="2" data-scottish_fold="2" data-british="1" data-siamese="1" data-golden_british="1"><span class="idx">B</span><span><b>一室一厅</b><span>有基本活动空间</span></span></button>
+        <button class="opt" data-maine_coon="3" data-orange_cat="3" data-ragdoll="2" data-american_shorthair="1" data-devon_rex="1" data-siamese="1"><span class="idx">C</span><span><b>有阳台或较大的房子</b><span>能放猫爬架，也愿意封窗</span></span></button>
+        <button class="opt" data-british="2" data-ragdoll="2" data-scottish_fold="2" data-maine_coon="1" data-orange_cat="1" data-persian="1"><span class="idx">D</span><span><b>和家人一起住</b><span>有老人或小孩，需要性格稳定</span></span></button>
+      </div>
+    </section>
+
+    <section class="q" data-step="3">
+      <h2>你是第一次养猫吗？</h2>
+      <p>第一次养猫，优先选性格稳定、饲养难度低的品种。</p>
+      <div class="opts">
+        <button class="opt" data-british="3" data-orange_cat="2" data-scottish_fold="2" data-american_shorthair="1" data-golden_british="1" data-exotic_shorthair="1"><span class="idx">A</span><span><b>是，第一次养</b><span>希望少踩坑</span></span></button>
+        <button class="opt" data-ragdoll="2" data-maine_coon="2" data-american_shorthair="2" data-siamese="2" data-sphynx="2" data-devon_rex="2" data-persian="1"><span class="idx">B</span><span><b>不是，以前养过</b><span>有经验，愿意挑战更活泼或长毛的猫</span></span></button>
+      </div>
+    </section>
+
+    <section class="q" data-step="4">
+      <h2>你能接受掉毛和梳毛吗？</h2>
+      <p>长毛猫好看，但护理时间是每天都要付出的。</p>
+      <div class="opts">
+        <button class="opt" data-british="3" data-american_shorthair="2" data-orange_cat="2" data-sphynx="2" data-scottish_fold="2" data-devon_rex="2" data-siamese="1"><span class="idx">A</span><span><b>不想每天梳毛，掉毛少一点更好</b><span>更看重省事</span></span></button>
+        <button class="opt" data-british="1" data-american_shorthair="1" data-maine_coon="2" data-ragdoll="1" data-siamese="1" data-devon_rex="1" data-golden_british="1"><span class="idx">B</span><span><b>每周梳两三次可以接受</b><span>愿意定期打理</span></span></button>
+        <button class="opt" data-persian="4" data-ragdoll="3" data-maine_coon="2"><span class="idx">C</span><span><b>愿意每天梳毛，也喜欢长毛</b><span>把梳毛当成陪伴</span></span></button>
+      </div>
+    </section>
+
+    <section class="q" data-step="5">
+      <h2>家里还有谁一起住？</h2>
+      <p>家庭成员和其他宠物，会影响猫的性格匹配。</p>
+      <div class="opts">
+        <button class="opt" data-persian="2" data-british="1" data-scottish_fold="1" data-sphynx="1" data-devon_rex="1" data-exotic_shorthair="1"><span class="idx">A</span><span><b>独居或两人，环境安静</b><span>希望回家能安静相处</span></span></button>
+        <button class="opt" data-british="2" data-ragdoll="2" data-maine_coon="2" data-orange_cat="2" data-persian="1" data-scottish_fold="1"><span class="idx">B</span><span><b>有老人或小孩</b><span>需要脾气稳定、包容度高的猫</span></span></button>
+        <button class="opt" data-orange_cat="2" data-siamese="2" data-maine_coon="2" data-american_shorthair="1" data-devon_rex="1" data-british="1"><span class="idx">C</span><span><b>已经有其他宠物</b><span>希望新猫能慢慢融入</span></span></button>
+        <button class="opt" data-siamese="2" data-sphynx="2" data-devon_rex="2" data-orange_cat="1" data-american_shorthair="1"><span class="idx">D</span><span><b>经常有朋友来</b><span>家里热闹，猫不能太胆小</span></span></button>
+      </div>
+    </section>
+
+    <section class="q" data-step="6">
+      <h2>你最看重猫咪的哪一点？</h2>
+      <p>没有对错，选你真正会长期在意的。</p>
+      <div class="opts">
+        <button class="opt" data-british="3" data-scottish_fold="3" data-persian="2" data-exotic_shorthair="2" data-golden_british="1"><span class="idx">A</span><span><b>安静省心，不太需要陪</b><span>适合忙碌或喜欢安静的人</span></span></button>
+        <button class="opt" data-devon_rex="4" data-sphynx="3" data-siamese="2" data-orange_cat="2" data-american_shorthair="2"><span class="idx">B</span><span><b>互动多，能一起玩</b><span>喜欢逗猫、训练和陪伴</span></span></button>
+        <button class="opt" data-sphynx="3" data-devon_rex="3" data-maine_coon="2" data-persian="1" data-scottish_fold="1"><span class="idx">C</span><span><b>外观特别，有个性</b><span>想要一眼记住的猫</span></span></button>
+        <button class="opt" data-british="3" data-orange_cat="2" data-american_shorthair="2" data-scottish_fold="2"><span class="idx">D</span><span><b>新手友好，少踩坑</b><span>第一次养，稳妥第一</span></span></button>
+        <button class="opt" data-ragdoll="4" data-siamese="2" data-sphynx="2" data-maine_coon="1"><span class="idx">E</span><span><b>温柔粘人，喜欢被抱</b><span>想要亲密陪伴</span></span></button>
+      </div>
+    </section>
+
+    <section class="result" id="result">
+      <h2 id="resultName">英国短毛猫</h2>
+      <p class="why" id="resultWhy"></p>
+      <div class="match">
+        <img id="resultImg" src="../assets/img/breeds/british_shorthair.jpg" alt="">
+        <div>
+          <b id="resultTitle">英国短毛猫</b>
+          <p id="resultMeta">短毛 · 中型 · 适合公寓</p>
+        </div>
+      </div>
+      <div class="form-actions">
+        <a class="btn" id="resultLink" href="../breeds/british.htm">看完整档案 →</a>
+        <button class="btn-reset" id="restart" type="button">重新测一次</button>
+      </div>
+      <p class="quiz-note">结果根据你的选择加权计算，只作参考；真正的合拍要看相处。</p>
+    </section>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="f-brand">屿猫</div><p class="f-note">认识一只猫，从看它开始。</p></div>
+    <div class="footer-links">
+      <div><b>逛逛</b><a href="../breeds/index.htm">品种图鉴</a><a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a><a href="../stories.htm">领养故事</a></div>
+      <div><b>参与</b><a href="index.htm">选猫指南</a><a href="../tools/index.htm">养猫工具</a><a href="../account/adopt.htm">领养登记</a></div>
+      <div><b>联系</b><a href="../about.htm">关于我们</a><a href="mailto:cat_web@demo.com">cat_web@demo.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 屿猫 · 本站品种资料与饲养建议仅供日常参考。</span><span>猫咪健康问题请咨询执业兽医。</span></div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<script src="../assets/js/site.js" defer></script>
+
+<script>
+(function () {
+  var breeds = {
+      "british": {
+            "name": "英国短毛猫",
+            "meta": "短毛 · 中型 · 适合公寓",
+            "img": "british_shorthair.jpg",
+            "why": "你喜欢稳定的节奏，住处不算大，也可能是第一次养猫——英短温和、安静、适应力强，不需要你全天陪着，是这几个条件里最稳的选择。"
+      },
+      "ragdoll": {
+            "name": "布偶猫",
+            "meta": "长毛 · 大型 · 需要陪伴",
+            "img": "ragdoll.jpg",
+            "why": "你时间充裕、空间也够，愿意每天梳毛和互动——布偶温柔粘人，被抱起会放松，很适合把猫当成家里长期成员的人。"
+      },
+      "orange_cat": {
+            "name": "橘猫",
+            "meta": "短毛 · 易胖 · 适合新手",
+            "img": "orange_cat.jpg",
+            "why": "你希望猫亲人、好相处，也愿意每天陪玩——橘猫性格随和、适应快，唯一要盯紧的是它的饭量。"
+      },
+      "american_shorthair": {
+            "name": "美短起司",
+            "meta": "短毛 · 中型 · 爱互动",
+            "img": "american_shorthair.jpg",
+            "why": "你愿意花时间陪玩，也喜欢聪明活泼的猫——美短起司精力旺盛、互动性强，适合喜欢看猫跑跳的家庭。"
+      },
+      "maine_coon": {
+            "name": "缅因猫",
+            "meta": "长毛 · 大型 · 需要空间",
+            "img": "maine_coon.jpg",
+            "why": "你时间或空间比较充裕，也愿意打理长毛——缅因体型大但脾气软，适合把猫当家人、愿意准备大猫爬架的人。"
+      },
+      "siamese": {
+            "name": "暹罗猫",
+            "meta": "短毛 · 中型 · 爱交流",
+            "img": "siamese.jpg",
+            "why": "你喜欢互动多、能接受话多的猫——暹罗聪明、黏人、爱交流，不适合长期没人陪的家庭。"
+      },
+      "exotic_shorthair": {
+            "name": "加菲猫",
+            "meta": "短毛 · 中型 · 需护眼",
+            "img": "exotic_shorthair.jpg",
+            "why": "你想要安静、省心的陪伴，也愿意每天护理眼睛和脸部——加菲温顺少动，但扁脸需要额外照顾。"
+      },
+      "golden_british": {
+            "name": "金渐层",
+            "meta": "短毛 · 中型 · 适合公寓",
+            "img": "golden_british.jpg",
+            "why": "你喜欢圆脸温顺的英短系，又希望毛色特别一点——金渐层性格接近英短，适合公寓和新手，注意控制体重。"
+      },
+      "persian": {
+            "name": "波斯猫",
+            "meta": "长毛 · 中型 · 需梳毛",
+            "img": "persian.jpg",
+            "why": "你时间充足、喜欢安静优雅的长毛猫，也愿意每天梳毛——波斯猫温顺但护理要求高，适合室内稳定环境。"
+      },
+      "sphynx": {
+            "name": "无毛猫",
+            "meta": "无毛 · 中型 · 需保暖",
+            "img": "sphynx.jpg",
+            "why": "你想要一只非常黏人、互动多的猫，也能接受无毛外观和每周护理——无毛猫怕冷，需要温暖的家。"
+      },
+      "devon_rex": {
+            "name": "德文卷毛猫",
+            "meta": "卷毛 · 小型 · 爱互动",
+            "img": "devon_rex.jpg",
+            "why": "你喜欢活泼、爱玩、长得特别的猫，也愿意每天陪玩——德文卷毛机灵黏人，适合愿意互动的人。"
+      },
+      "scottish_fold": {
+            "name": "苏格兰折耳猫",
+            "meta": "短毛 · 中型 · 需关注骨骼",
+            "img": "scottish_fold.jpg",
+            "why": "你喜欢安静温顺的猫，也愿意为它的骨骼健康定期体检——折耳猫可爱，但折耳是软骨突变，需要提前了解风险。"
+      }
+};
+
+  var keys = Object.keys(breeds);
+  var scores = {};
+  keys.forEach(function (k) { scores[k] = 0; });
+  var step = 0;
+  var questions = document.querySelectorAll('.q');
+  var dots = document.querySelectorAll('#progress i');
+  var result = document.getElementById('result');
+
+  function showStep(n) {
+    questions.forEach(function (q, i) { q.classList.toggle('on', i === n); });
+    dots.forEach(function (d, i) { d.classList.toggle('on', i <= n); });
+  }
+
+  document.querySelectorAll('.opt').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      keys.forEach(function (k) {
+        var v = parseInt(btn.getAttribute('data-' + k) || '0', 10);
+        scores[k] += v;
+      });
+      step += 1;
+      if (step < questions.length) {
+        showStep(step);
+        document.querySelector('.quiz-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        showResult();
+      }
+    });
+  });
+
+  function showResult() {
+    var best = keys[0];
+    keys.forEach(function (k) {
+      if (scores[k] > scores[best]) best = k;
+    });
+    var b = breeds[best];
+    document.getElementById('resultName').textContent = b.name;
+    document.getElementById('resultWhy').textContent = b.why;
+    document.getElementById('resultImg').src = '../assets/img/breeds/' + b.img;
+    document.getElementById('resultImg').alt = b.name;
+    document.getElementById('resultTitle').textContent = b.name;
+    document.getElementById('resultMeta').textContent = b.meta;
+    document.getElementById('resultLink').href = '../breeds/' + best + '.htm';
+    questions.forEach(function (q) { q.classList.remove('on'); });
+    result.classList.add('on');
+    dots.forEach(function (d) { d.classList.add('on'); });
+    result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  document.getElementById('restart').addEventListener('click', function () {
+    keys.forEach(function (k) { scores[k] = 0; });
+    step = 0;
+    result.classList.remove('on');
+    showStep(0);
+    document.querySelector('.quiz-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+</script>
+
+</body>
+</html>

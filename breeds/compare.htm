@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>品种对比 · 屿猫</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.htm"><span class="logo" aria-hidden="true"><img src="../assets/img/logo.svg" alt=""></span><b>屿猫</b></a>
+    <nav class="nav">
+      <a class="on" href="../breeds/index.htm">品种图鉴</a>
+      <a href="../care/index.htm">饲养知识</a>
+      <a href="../cat_facts.htm">猫咪百科</a>
+      <a href="../guide/index.htm">选猫指南</a>
+      <a href="../tools/index.htm">养猫工具</a>
+      <a href="../account/adopt.htm">领养登记</a>
+    </nav>
+    <div class="top-actions"><a href="../account/login.htm">登录</a><a class="reg" href="../account/register.htm">注册</a></div>
+  </div>
+</div>
+
+<div class="crumb"><a href="../index.htm">首页</a> ／ <a href="index.htm">品种图鉴</a> ／ <strong>品种对比</strong></div>
+
+
+<div class="page-head reveal">
+  <h1>品种对比</h1>
+  <p>把两只猫放在一起看：体型、被毛、活动量、粘人度、护理难度和适合人群。个体差异永远大于品种标签。</p>
+</div>
+
+<div class="compare-wrap">
+  <div class="compare-pickers reveal">
+    <label>猫 A
+      <select id="breedA"></select>
+    </label>
+    <button id="swapBreed" class="btn-reset" type="button">⇄ 交换</button>
+    <label>猫 B
+      <select id="breedB"></select>
+    </label>
+    <button id="randomBreed" class="btn-reset" type="button">随机一对</button>
+  </div>
+
+  <div class="compare-cards reveal">
+    <a class="compare-card" id="cardA" href="british.htm">
+      <div class="compare-photo"><img id="imgA" src="../assets/img/breeds/british_shorthair.jpg" alt=""></div>
+      <div class="compare-info"><h2 id="nameA">英国短毛猫</h2><p id="metaA">短毛 · 中型 · 适合公寓</p></div>
+    </a>
+    <div class="compare-vs">VS</div>
+    <a class="compare-card" id="cardB" href="ragdoll.htm">
+      <div class="compare-photo"><img id="imgB" src="../assets/img/breeds/ragdoll.jpg" alt=""></div>
+      <div class="compare-info"><h2 id="nameB">布偶猫</h2><p id="metaB">长毛 · 大型 · 需要陪伴</p></div>
+    </a>
+  </div>
+
+  <div class="compare-table reveal" id="compareTable"></div>
+
+  <div class="compare-summary reveal">
+    <div><span>猫 A 更适合</span><p id="suitA"></p></div>
+    <div><span>猫 B 更适合</span><p id="suitB"></p></div>
+  </div>
+
+  <p class="compare-note">活动量、粘人度、护理难度、空间需求、叫声均为 1–5 分的编辑参考值，不是品种标准评分。选猫时优先看具体那只猫的性格与健康。</p>
+</div>
+
+<script>
+(function () {
+  var BREEDS = {"british": {"name": "英国短毛猫", "img": "british_shorthair.jpg", "meta": "短毛 · 中型 · 适合公寓", "body": "中型", "coat": "短毛", "activity": 2, "affection": 3, "novice": 5, "grooming": 2, "space": 2, "vocal": 2, "health": "体重、心脏", "suitable": "公寓、上班族、第一次养猫"}, "ragdoll": {"name": "布偶猫", "img": "ragdoll.jpg", "meta": "长毛 · 大型 · 需要陪伴", "body": "大型", "coat": "长毛", "activity": 2, "affection": 5, "novice": 4, "grooming": 5, "space": 4, "vocal": 2, "health": "心脏、毛球", "suitable": "时间多、愿意梳毛、想要粘人猫"}, "orange_cat": {"name": "橘猫", "img": "orange_cat.jpg", "meta": "短毛 · 易胖 · 适合新手", "body": "中型", "coat": "短毛", "activity": 4, "affection": 4, "novice": 5, "grooming": 2, "space": 2, "vocal": 3, "health": "体重", "suitable": "喜欢亲人、愿意陪玩、第一次养猫"}, "american_shorthair": {"name": "美短起司", "img": "american_shorthair.jpg", "meta": "短毛 · 中型 · 爱互动", "body": "中型", "coat": "短毛", "activity": 4, "affection": 3, "novice": 4, "grooming": 2, "space": 2, "vocal": 3, "health": "心脏", "suitable": "喜欢互动、有养猫经验、家里热闹"}, "maine_coon": {"name": "缅因猫", "img": "maine_coon.jpg", "meta": "长毛 · 大型 · 需要空间", "body": "大型", "coat": "长毛", "activity": 3, "affection": 4, "novice": 3, "grooming": 5, "space": 5, "vocal": 2, "health": "心脏、关节", "suitable": "空间大、有时间梳毛、喜欢大猫"}, "siamese": {"name": "暹罗猫", "img": "siamese.jpg", "meta": "短毛 · 中型 · 爱交流", "body": "中型", "coat": "短毛", "activity": 5, "affection": 5, "novice": 3, "grooming": 2, "space": 2, "vocal": 5, "health": "呼吸、牙齿", "suitable": "时间多、喜欢互动、不怕话多"}, "exotic_shorthair": {"name": "加菲猫", "img": "exotic_shorthair.jpg", "meta": "短毛 · 中型 · 需护眼", "body": "中型", "coat": "短毛", "activity": 2, "affection": 4, "novice": 3, "grooming": 4, "space": 2, "vocal": 1, "health": "眼部、呼吸", "suitable": "安静家庭、愿意每天护眼"}, "golden_british": {"name": "金渐层", "img": "golden_british.jpg", "meta": "短毛 · 中型 · 适合公寓", "body": "中型", "coat": "短毛", "activity": 2, "affection": 3, "novice": 5, "grooming": 2, "space": 2, "vocal": 2, "health": "体重", "suitable": "公寓、新手、喜欢圆脸猫"}, "persian": {"name": "波斯猫", "img": "persian.jpg", "meta": "长毛 · 中型 · 需梳毛", "body": "中型", "coat": "长毛", "activity": 1, "affection": 3, "novice": 2, "grooming": 5, "space": 2, "vocal": 1, "health": "呼吸、眼部", "suitable": "安静家庭、每天梳毛、温度稳定"}, "sphynx": {"name": "无毛猫", "img": "sphynx.jpg", "meta": "无毛 · 中型 · 需保暖", "body": "中型", "coat": "无毛", "activity": 4, "affection": 5, "novice": 3, "grooming": 4, "space": 2, "vocal": 4, "health": "皮肤、保暖", "suitable": "喜欢粘人、能接受无毛、家里温暖"}, "devon_rex": {"name": "德文卷毛猫", "img": "devon_rex.jpg", "meta": "卷毛 · 小型 · 爱互动", "body": "小型", "coat": "卷毛", "activity": 5, "affection": 5, "novice": 3, "grooming": 3, "space": 1, "vocal": 3, "health": "耳部、保暖", "suitable": "每天陪玩、喜欢特别外观、家里温暖"}, "scottish_fold": {"name": "苏格兰折耳猫", "img": "scottish_fold.jpg", "meta": "短毛 · 中型 · 需关注骨骼", "body": "中型", "coat": "短毛", "activity": 2, "affection": 4, "novice": 3, "grooming": 2, "space": 2, "vocal": 1, "health": "软骨、关节", "suitable": "安静家庭、愿意定期体检"}};
+  var ids = Object.keys(BREEDS);
+  var selA = document.getElementById('breedA');
+  var selB = document.getElementById('breedB');
+
+  ids.forEach(function (id) {
+    [selA, selB].forEach(function (sel) {
+      var o = document.createElement('option');
+      o.value = id;
+      o.textContent = BREEDS[id].name;
+      sel.appendChild(o);
+    });
+  });
+  selA.value = 'british';
+  selB.value = 'ragdoll';
+
+  function dots(n) {
+    return '●'.repeat(n) + '○'.repeat(5 - n);
+  }
+  function setCard(side, id) {
+    var b = BREEDS[id];
+    document.getElementById('img' + side).src = '../assets/img/breeds/' + b.img;
+    document.getElementById('img' + side).alt = b.name;
+    document.getElementById('name' + side).textContent = b.name;
+    document.getElementById('meta' + side).textContent = b.meta;
+    document.getElementById('card' + side).href = id + '.htm';
+    document.getElementById('suit' + side).textContent = b.suitable;
+  }
+  function render() {
+    var a = BREEDS[selA.value], b = BREEDS[selB.value];
+    setCard('A', selA.value);
+    setCard('B', selB.value);
+    var rows = [
+      ['体型', a.body, b.body],
+      ['被毛', a.coat, b.coat],
+      ['活动量', dots(a.activity), dots(b.activity)],
+      ['粘人度', dots(a.affection), dots(b.affection)],
+      ['新手友好', dots(a.novice), dots(b.novice)],
+      ['护理难度', dots(a.grooming), dots(b.grooming)],
+      ['空间需求', dots(a.space), dots(b.space)],
+      ['叫声', dots(a.vocal), dots(b.vocal)],
+      ['健康关注', a.health, b.health]
+    ];
+    document.getElementById('compareTable').innerHTML = rows.map(function (r) {
+      return '<div class="compare-row"><span class="cr-label">' + r[0] + '</span><span>' + r[1] + '</span><span>' + r[2] + '</span></div>';
+    }).join('');
+  }
+
+  selA.addEventListener('change', render);
+  selB.addEventListener('change', render);
+  document.getElementById('swapBreed').addEventListener('click', function () {
+    var t = selA.value; selA.value = selB.value; selB.value = t; render();
+  });
+  document.getElementById('randomBreed').addEventListener('click', function () {
+    var i = Math.floor(Math.random() * ids.length);
+    var j = Math.floor(Math.random() * (ids.length - 1));
+    if (j >= i) j++;
+    selA.value = ids[i]; selB.value = ids[j]; render();
+  });
+  render();
+})();
+</script>
+
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="f-brand">屿猫</div><p class="f-note">认识一只猫，从看它开始。</p></div>
+    <div class="footer-links">
+      <div><b>逛逛</b><a href="../breeds/index.htm">品种图鉴</a><a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a><a href="../stories.htm">领养故事</a></div>
+      <div><b>参与</b><a href="../breeds/compare.htm">品种对比</a><a href="../guide/index.htm">选猫指南</a><a href="../tools/index.htm">养猫工具</a><a href="../account/adopt.htm">领养登记</a></div>
+      <div><b>联系</b><a href="../about.htm">关于我们</a><a href="mailto:cat_web@demo.com">cat_web@demo.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 屿猫 · 本站品种资料与饲养建议仅供日常参考。</span><span>猫咪健康问题请咨询执业兽医。</span></div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<script src="../assets/js/site.js" defer></script>
+
+</body>
+</html>

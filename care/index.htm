@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>饲养知识 · 屿猫</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.htm"><span class="logo" aria-hidden="true"><img src="../assets/img/logo.svg" alt=""></span><b>屿猫</b></a>
+    <nav class="nav">
+      <a href="../breeds/index.htm">品种图鉴</a>
+      <a class="on" href="index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a>
+      <a href="../guide/index.htm">选猫指南</a>
+      <a href="../tools/index.htm">养猫工具</a>
+      <a href="../account/adopt.htm">领养登记</a>
+    </nav>
+    <div class="top-actions"><a href="../account/login.htm">登录</a><a class="reg" href="../account/register.htm">注册</a></div>
+  </div>
+</div>
+
+<div class="page-head reveal">
+  <h1>饲养知识</h1>
+  <p>六册手记：日常养护、行为解读、禁忌食品、饮水泌尿、梳毛洗澡、疫苗体检。先把基础做对，再谈养得好。</p>
+</div>
+
+<div class="container">
+  <div class="care-filter reveal" role="group" aria-label="按主题筛选文章">
+    <button class="on" type="button" data-filter="all">全部 6 篇</button>
+    <button type="button" data-filter="basic">基础养护</button>
+    <button type="button" data-filter="behavior">行为</button>
+    <button type="button" data-filter="food">饮食安全</button>
+    <button type="button" data-filter="health">健康</button>
+    <button type="button" data-filter="grooming">日常护理</button>
+  </div>
+
+  <div class="care-grid">
+    <a class="care-card reveal d1" href="daily_care.htm" data-cat="basic">
+      <div class="care-photo"><img src="../assets/img/care/daily_care.jpg" alt="日常养护"></div>
+      <div class="care-body">
+        <h3>日常养护 <span class="k">VOL. 01</span></h3>
+        <p>饮食、饮水、猫砂、环境与健康管理。把每天的小事做对，猫就少生病。</p>
+      </div>
+    </a>
+    <a class="care-card reveal d2" href="behavior.htm" data-cat="behavior">
+      <div class="care-photo"><img src="../assets/img/care/behavior.jpg" alt="行为解读"></div>
+      <div class="care-body">
+        <h3>行为解读 <span class="k">VOL. 02</span></h3>
+        <p>叫声、尾巴、耳朵和日常动作都在表达。读懂信号，少一点误会。</p>
+      </div>
+    </a>
+    <a class="care-card reveal d3" href="forbidden_food.htm" data-cat="food">
+      <div class="care-photo"><img src="../assets/img/care/food/care-cat-food.jpg" alt="猫靠近人类食物"></div>
+      <div class="care-body">
+        <h3>禁忌食品 <span class="k">VOL. 03</span></h3>
+        <p>巧克力、洋葱、葡萄、木糖醇……一张清单，先记住不能喂的东西。</p>
+      </div>
+    </a>
+    <a class="care-card reveal d1" href="water_health.htm" data-cat="health">
+      <div class="care-photo"><img src="../assets/img/care/water.jpg" alt="猫在喝水"></div>
+      <div class="care-body">
+        <h3>饮水与泌尿 <span class="k">VOL. 04</span></h3>
+        <p>每天该喝多少、尿团怎么看、哪些是泌尿急症，一次讲清。</p>
+      </div>
+    </a>
+    <a class="care-card reveal d2" href="grooming.htm" data-cat="grooming">
+      <div class="care-photo"><img src="../assets/img/care/grooming.jpg" alt="猫在自我清洁"></div>
+      <div class="care-body">
+        <h3>梳毛与洗澡 <span class="k">VOL. 05</span></h3>
+        <p>不同毛长的梳毛频率、洗澡边界、掉毛和毛球处理。</p>
+      </div>
+    </a>
+    <a class="care-card reveal d3" href="vaccine_care.htm" data-cat="health">
+      <div class="care-photo"><img src="../assets/img/care/vaccine.jpg" alt="安静休息的小猫"></div>
+      <div class="care-body">
+        <h3>疫苗与体检 <span class="k">VOL. 06</span></h3>
+        <p>疫苗时间表、驱虫频率和体检项目，提前记下来少慌乱。</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="two-col reveal" style="margin-top:26px;">
+    <section class="panel" id="careCheck">
+      <div class="panel-head">
+        <h3>每周护理清单</h3>
+        <span class="check-progress" id="checkProgress">0 / 8</span>
+      </div>
+      <div class="check-list">
+        <label class="check-item"><input type="checkbox" data-key="water"> 每天换水、洗水碗</label>
+        <label class="check-item"><input type="checkbox" data-key="litter"> 每天铲屎、看尿团</label>
+        <label class="check-item"><input type="checkbox" data-key="brush"> 每周梳毛 2–3 次（长毛每天）</label>
+        <label class="check-item"><input type="checkbox" data-key="weight"> 每周称一次体重</label>
+        <label class="check-item"><input type="checkbox" data-key="nails"> 每 2–3 周剪一次指甲</label>
+        <label class="check-item"><input type="checkbox" data-key="ears"> 每周检查耳朵和眼睛</label>
+        <label class="check-item"><input type="checkbox" data-key="deworm"> 按兽医建议定期驱虫</label>
+        <label class="check-item"><input type="checkbox" data-key="vet"> 每年/每半年体检一次</label>
+      </div>
+      <div class="check-actions">
+        <button class="btn-reset" id="resetChecks" type="button">清空清单</button>
+        <span>勾选状态会保存在本机浏览器。</span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h3>新手第一周，按这个顺序准备</h3>
+      <ul class="checks">
+        <li>先把猫砂盆、猫粮和水碗放好，给它一个安静的小房间。</li>
+        <li>封好窗户、收好电线与塑料袋，检查阳台和厨房。</li>
+        <li>第一周不洗澡、不频繁抱，让它自己决定什么时候靠近。</li>
+        <li>观察进食、饮水和排便，三天内建立固定喂食时间。</li>
+        <li>预约一次基础体检，确认疫苗与驱虫记录。</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="panel reveal" style="margin-top:22px;">
+    <h3>这些情况，先别等</h3>
+    <p class="panel-sub">不是所有异常都要立刻冲医院，但下面这些信号值得优先处理。</p>
+    <div class="symptom-grid">
+      <div class="symptom-card s-now">
+        <b>尿不出来 / 频繁蹲盆</b><span class="s-tag">立即就医</span>
+        <p>蹲很久只有几滴尿、叫、舔生殖器，公猫可能是尿道阻塞。</p>
+      </div>
+      <div class="symptom-card s-now">
+        <b>呼吸急促 / 张嘴呼吸</b><span class="s-tag">立即就医</span>
+        <p>安静时也呼吸快、舌头发紫，别等，直接联系医院。</p>
+      </div>
+      <div class="symptom-card s-now">
+        <b>误食巧克力 / 百合 / 药物</b><span class="s-tag">立即就医</span>
+        <p>记下吃了什么、多少、什么时候，带上包装联系医院。</p>
+      </div>
+      <div class="symptom-card s-24">
+        <b>持续呕吐 / 腹泻超过 24 小时</b><span class="s-tag">尽快就医</span>
+        <p>幼猫、老年猫更容易脱水，不要只靠禁食观察。</p>
+      </div>
+      <div class="symptom-card s-24">
+        <b>24 小时不吃不喝</b><span class="s-tag">尽快就医</span>
+        <p>猫长时间不进食可能引发脂肪肝，尤其胖猫。</p>
+      </div>
+      <div class="symptom-card s-watch">
+        <b>躲藏 / 精神差超过一天</b><span class="s-tag">观察并联系</span>
+        <p>先量体温、看饮水排便；持续不改善就预约检查。</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="f-brand">屿猫</div><p class="f-note">认识一只猫，从看它开始。</p></div>
+    <div class="footer-links">
+      <div><b>逛逛</b><a href="../breeds/index.htm">品种图鉴</a><a href="index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a><a href="../stories.htm">领养故事</a></div>
+      <div><b>参与</b><a href="../breeds/compare.htm">品种对比</a><a href="../guide/index.htm">选猫指南</a><a href="../tools/index.htm">养猫工具</a><a href="../account/adopt.htm">领养登记</a></div>
+      <div><b>联系</b><a href="../about.htm">关于我们</a><a href="mailto:cat_web@demo.com">cat_web@demo.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 屿猫 · 本站品种资料与饲养建议仅供日常参考。</span><span>猫咪健康问题请咨询执业兽医。</span></div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<script src="../assets/js/site.js" defer></script>
+
+<script>
+(function () {
+  /* 文章筛选 */
+  var filterBtns = document.querySelectorAll('.care-filter button');
+  var cards = document.querySelectorAll('.care-grid .care-card');
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      filterBtns.forEach(function (b) { b.classList.remove('on'); });
+      btn.classList.add('on');
+      var f = btn.getAttribute('data-filter');
+      cards.forEach(function (card) {
+        var show = f === 'all' || card.getAttribute('data-cat') === f;
+        card.classList.toggle('is-hidden', !show);
+      });
+    });
+  });
+
+  /* 护理清单：localStorage 保存 */
+  var checks = document.querySelectorAll('#careCheck input[type="checkbox"]');
+  var progress = document.getElementById('checkProgress');
+  var KEY = 'careChecklist';
+  function updateProgress() {
+    var done = 0;
+    checks.forEach(function (c) { if (c.checked) done++; });
+    progress.textContent = done + ' / ' + checks.length;
+  }
+  function save() {
+    var obj = {};
+    checks.forEach(function (c) { obj[c.getAttribute('data-key')] = c.checked; });
+    try { localStorage.setItem(KEY, JSON.stringify(obj)); } catch (e) {}
+    updateProgress();
+  }
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+    checks.forEach(function (c) { c.checked = !!saved[c.getAttribute('data-key')]; });
+  } catch (e) {}
+  checks.forEach(function (c) { c.addEventListener('change', save); });
+  document.getElementById('resetChecks').addEventListener('click', function () {
+    checks.forEach(function (c) { c.checked = false; });
+    try { localStorage.removeItem(KEY); } catch (e) {}
+    updateProgress();
+  });
+  updateProgress();
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>屿猫 · 认识一只猫，从看它开始</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.htm"><span class="logo" aria-hidden="true"><img src="assets/img/logo.svg" alt=""></span><b>屿猫</b></a>
+    <nav class="nav">
+      <a class="on" href="breeds/index.htm">品种图鉴</a>
+      <a href="care/index.htm">饲养知识</a><a href="cat_facts.htm">猫咪百科</a>
+      <a href="guide/index.htm">选猫指南</a>
+      <a href="tools/index.htm">养猫工具</a>
+      <a href="account/adopt.htm">领养登记</a>
+    </nav>
+    <div class="top-actions" id="userArea"><a href="account/login.htm">登录</a><a class="reg" href="account/register.htm">注册</a></div>
+  </div>
+</div>
+
+<!-- 首屏：照片猫墙 + 手绘贴纸 + 贴纸卡片 -->
+<section class="hero2">
+  <div class="hero2-stage">
+    <img class="doodle doodle-a" src="assets/img/doodle/doodle-cat-a.png" alt="手绘小猫">
+    <img class="doodle doodle-b" src="assets/img/doodle/doodle-cat-b.png" alt="手绘小猫">
+    <figure class="polaroid p1">
+      <img src="assets/img/breeds/orange_cat.jpg" alt="橘猫">
+      <figcaption>橘猫 · 亲人</figcaption>
+    </figure>
+    <figure class="polaroid p2">
+      <img src="assets/img/breeds/american_shorthair.jpg" alt="美短起司">
+      <figcaption>美短起司 · 机敏</figcaption>
+    </figure>
+    <figure class="portrait">
+      <img src="assets/img/breeds/ragdoll.jpg" alt="布偶猫">
+      <figcaption>布偶 · 温柔粘人</figcaption>
+    </figure>
+  </div>
+
+  <div class="hero2-panel">
+    <div class="hero-card">
+      <h1>今天，<br>想认识哪只猫？</h1>
+      <p class="lede">屿猫把品种、性格和喂养方法整理在一起。慢慢看，不用急着选。</p>
+      <div class="entries">
+        <a class="sticker" href="breeds/index.htm" style="--rot:-.8deg">
+          <span class="num">01</span>
+          <span><b class="t">品种图鉴</b><span class="d">十二种猫 · 英短 · 布偶 · 缅因…</span></span>
+        </a>
+        <a class="sticker" href="care/index.htm" style="--rot:.7deg">
+          <span class="num">02</span>
+          <span><b class="t">科学喂养</b><span class="d">日常养护 · 行为解读 · 疫苗体检</span></span>
+        </a>
+        <a class="sticker" href="account/adopt.htm" style="--rot:-.4deg">
+          <span class="num">03</span>
+          <span><b class="t">领养登记</b><span class="d">留个联系方式，等一只猫回家</span></span>
+        </a>
+      </div>
+      <p class="foot">十二种猫咪 · 六册手记 · 每周更新</p>
+    </div>
+  </div>
+</section>
+
+<!-- 十二种人气猫咪 -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <h2>十二种人气猫咪</h2>
+        <p>先看脸，再看性格与饲养难度。总有一种适合你的生活节奏。</p>
+      </div>
+      <a class="more" href="breeds/index.htm">全部品种档案 →</a>
+    </div>
+
+    <div class="breed-grid">
+      <a class="breed-card reveal" href="breeds/british.htm"><div class="breed-photo"><img src="assets/img/breeds/british_shorthair.jpg" alt="英国短毛猫"><span class="breed-tag">新手友好</span><div class="breed-name"><b>英国短毛猫</b><span>温顺 · 敦实 · 安静</span></div></div><div class="breed-meta"><span>短毛 · 中型 · 适合公寓</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal d2" href="breeds/ragdoll.htm"><div class="breed-photo"><img src="assets/img/breeds/ragdoll.jpg" alt="布偶猫"><span class="breed-tag">长毛</span><div class="breed-name"><b>布偶猫</b><span>温柔 · 粘人 · 大型</span></div></div><div class="breed-meta"><span>长毛 · 大型 · 需要陪伴</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal d3" href="breeds/orange_cat.htm"><div class="breed-photo"><img src="assets/img/breeds/orange_cat.jpg" alt="橘猫"><span class="breed-tag">活泼</span><div class="breed-name"><b>橘猫</b><span>开朗 · 贪吃 · 亲人</span></div></div><div class="breed-meta"><span>短毛 · 易胖 · 适合新手</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal d4" href="breeds/american_shorthair.htm"><div class="breed-photo"><img src="assets/img/breeds/american_shorthair.jpg" alt="美短起司"><span class="breed-tag">机敏</span><div class="breed-name"><b>美短起司</b><span>聪明 · 活泼 · 短毛</span></div></div><div class="breed-meta"><span>短毛 · 中型 · 爱互动</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal" href="breeds/maine_coon.htm"><div class="breed-photo"><img src="assets/img/breeds/maine_coon.jpg" alt="缅因猫"><span class="breed-tag">温柔巨人</span><div class="breed-name"><b>缅因猫</b><span>威武 · 温和 · 长毛</span></div></div><div class="breed-meta"><span>长毛 · 大型 · 需要空间</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal d2" href="breeds/siamese.htm"><div class="breed-photo"><img src="assets/img/breeds/siamese.jpg" alt="暹罗猫"><span class="breed-tag">重点色</span><div class="breed-name"><b>暹罗猫</b><span>聪明 · 话多 · 粘人</span></div></div><div class="breed-meta"><span>短毛 · 中型 · 爱交流</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal d3" href="breeds/exotic_shorthair.htm"><div class="breed-photo"><img src="assets/img/breeds/exotic_shorthair.jpg" alt="加菲猫"><span class="breed-tag">扁脸</span><div class="breed-name"><b>加菲猫</b><span>安静 · 温顺 · 短毛</span></div></div><div class="breed-meta"><span>短毛 · 中型 · 需护眼</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal d4" href="breeds/golden_british.htm"><div class="breed-photo"><img src="assets/img/breeds/golden_british.jpg" alt="金渐层"><span class="breed-tag">英短色系</span><div class="breed-name"><b>金渐层</b><span>圆润 · 温和 · 金毛</span></div></div><div class="breed-meta"><span>短毛 · 中型 · 适合公寓</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal" href="breeds/persian.htm"><div class="breed-photo"><img src="assets/img/breeds/persian.jpg" alt="波斯猫"><span class="breed-tag">长毛</span><div class="breed-name"><b>波斯猫</b><span>安静 · 优雅 · 长毛</span></div></div><div class="breed-meta"><span>长毛 · 中型 · 需梳毛</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal d2" href="breeds/sphynx.htm"><div class="breed-photo"><img src="assets/img/breeds/sphynx.jpg" alt="无毛猫"><span class="breed-tag">无毛</span><div class="breed-name"><b>无毛猫</b><span>黏人 · 话多 · 怕冷</span></div></div><div class="breed-meta"><span>无毛 · 中型 · 需保暖</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal d3" href="breeds/devon_rex.htm"><div class="breed-photo"><img src="assets/img/breeds/devon_rex.jpg" alt="德文卷毛猫"><span class="breed-tag">卷毛</span><div class="breed-name"><b>德文卷毛猫</b><span>机灵 · 黏人 · 小卷毛</span></div></div><div class="breed-meta"><span>卷毛 · 小型 · 爱互动</span><span class="go">看档案 →</span></div></a>
+      <a class="breed-card reveal d4" href="breeds/scottish_fold.htm"><div class="breed-photo"><img src="assets/img/breeds/scottish_fold.jpg" alt="苏格兰折耳猫"><span class="breed-tag">折耳</span><div class="breed-name"><b>苏格兰折耳猫</b><span>温顺 · 安静 · 折耳</span></div></div><div class="breed-meta"><span>短毛 · 中型 · 需关注骨骼</span><span class="go">看档案 →</span></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- 品种图谱 -->
+<section class="section" style="background: var(--cream-deep);">
+  <div class="container">
+    <div class="atlas reveal">
+      <figure class="atlas-fig">
+        <img src="assets/img/breeds/breed_main.jpg" alt="20 种常见猫咪品种图谱">
+        <figcaption>屿猫品种图谱 · 20 种常见猫咪</figcaption>
+      </figure>
+      <div class="atlas-text">
+        <h2>20 种常见猫咪，<br>一张图谱先认脸</h2>
+        <p>从英短、布偶到缅因、暹罗，短毛、长毛、无毛，橘色、银渐层、重点色——先在图谱里认脸，再去档案里看性格、饲养要点和适合人群。其中十二种已经整理成完整档案。</p>
+        <ul class="atlas-list">
+          <li>按毛长：短毛 / 长毛 / 无毛</li>
+          <li>按体型：小型 / 中型 / 大型</li>
+          <li>常见花色：蓝、橘、银渐层、重点色</li>
+          <li>特殊品种：折耳、德文、无毛猫</li>
+        </ul>
+        <a class="btn" href="breeds/index.htm">查看完整品种档案 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 养猫之前 -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <h2>养猫之前，先读六册手记</h2>
+        <p>从日常养护到饮水、梳毛和疫苗，把会遇到的事提前放在一起。</p>
+      </div>
+      <a class="more" href="care/index.htm">进入饲养知识 →</a>
+    </div>
+
+    <div class="care-grid">
+      <a class="care-card reveal d1" href="care/daily_care.htm">
+        <div class="care-photo"><img src="assets/img/care/daily_care.jpg" alt="日常养护"></div>
+        <div class="care-body">
+          <h3>日常养护 <span class="k">VOL. 01</span></h3>
+          <p>饮食、饮水、猫砂、居住环境与健康管理，一天一天把猫照顾好。</p>
+        </div>
+      </a>
+      <a class="care-card reveal d2" href="care/behavior.htm">
+        <div class="care-photo"><img src="assets/img/care/behavior.jpg" alt="行为解读"></div>
+        <div class="care-body">
+          <h3>行为解读 <span class="k">VOL. 02</span></h3>
+          <p>叫声、尾巴和日常动作都在说话。读懂信号，少一点误会。</p>
+        </div>
+      </a>
+      <a class="care-card danger reveal d3" href="care/forbidden_food.htm">
+        <div class="care-photo"><img src="assets/img/care/food/chocolate-home.jpg" alt="巧克力等禁忌食品"></div>
+        <div class="care-body">
+          <h3>禁忌食品 <span class="k">VOL. 03</span></h3>
+          <ul class="danger-list">
+            <li><span>巧克力</span><em>高危</em></li>
+            <li><span>洋葱 / 大蒜</span><em>高危</em></li>
+            <li><span>葡萄 / 葡萄干</span><em>高危</em></li>
+            <li><span>牛奶 / 乳制品</span><em>常见腹泻</em></li>
+          </ul>
+        </div>
+      </a>
+      <a class="care-card reveal d1" href="care/water_health.htm">
+        <div class="care-photo"><img src="assets/img/care/water.jpg" alt="猫在喝水"></div>
+        <div class="care-body">
+          <h3>饮水与泌尿 <span class="k">VOL. 04</span></h3>
+          <p>猫不爱喝水，泌尿问题往往来得突然。从水碗、尿团和猫砂盆开始观察。</p>
+        </div>
+      </a>
+      <a class="care-card reveal d2" href="care/grooming.htm">
+        <div class="care-photo"><img src="assets/img/care/grooming.jpg" alt="猫在自我清洁"></div>
+        <div class="care-body">
+          <h3>梳毛与洗澡 <span class="k">VOL. 05</span></h3>
+          <p>不同毛长怎么梳、多久洗一次、掉毛和毛球怎么处理，一次说清。</p>
+        </div>
+      </a>
+      <a class="care-card reveal d3" href="care/vaccine_care.htm">
+        <div class="care-photo"><img src="assets/img/care/vaccine.jpg" alt="安静休息的小猫"></div>
+        <div class="care-body">
+          <h3>疫苗与体检 <span class="k">VOL. 06</span></h3>
+          <p>疫苗时间表、驱虫频率和体检项目，提前记下来，少一点手忙脚乱。</p>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 新功能入口：选猫测试 + 养猫工具 -->
+<section class="section" style="background: var(--peach);">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <h2>拿不定主意？让工具帮你</h2>
+        <p>两个不注册也能用的小功能，帮你看清自己适合哪只猫。</p>
+      </div>
+    </div>
+    <div class="tool-grid" style="padding:0; max-width:none;">
+      <div class="tool-card reveal d1">
+        <h2>选猫指南 · 3 个问题</h2>
+        <p class="desc">居住空间、每天陪伴时间、是否第一次养猫——根据你的回答推荐一个更合拍的品种。</p>
+        <a class="btn" href="guide/index.htm" style="margin-top:18px;">开始测试 →</a>
+      </div>
+      <div class="tool-card reveal d2">
+        <h2>养猫工具 · 喂食与年龄</h2>
+        <p class="desc">按体重估算每日喂食量；把猫龄换算成人类年龄，第一次养猫也能心里有数。</p>
+        <a class="btn ghost" href="tools/index.htm" style="margin-top:18px;">打开工具 →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 领养流程 -->
+<section class="section" style="background: var(--sky-soft);">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <h2>领养不是带走一只猫，<br>而是接回一段关系</h2>
+        <p>三步走完，先确认彼此合适，再把它接回家。</p>
+      </div>
+      <a class="more" href="account/adopt.htm">填写领养登记 →</a>
+    </div>
+
+    <div class="steps">
+      <div class="step reveal d1">
+        <div class="no">01</div>
+        <h3>选一只合拍的猫</h3>
+        <p>看品种档案，也看自己的居住空间、在家时间和家人意见。性格合拍比长相重要。</p>
+      </div>
+      <div class="step reveal d2">
+        <div class="no">02</div>
+        <h3>填写领养咨询</h3>
+        <p>留下联系方式、居住情况和养猫经验，我们会根据条件帮你匹配，而不是先到先得。</p>
+      </div>
+      <div class="step reveal d3">
+        <div class="no">03</div>
+        <h3>家访与接猫</h3>
+        <p>确认封窗、猫砂盆位置和家人共识，准备好猫粮与猫窝，再约时间接它回家。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <h2>第一次养猫的四个问题</h2>
+        <p>答案不长，但每一条都来自真实养猫场景。</p>
+      </div>
+    </div>
+
+    <div class="faq reveal">
+      <details open>
+        <summary>养猫需要提前准备什么？</summary>
+        <p>猫砂盆、猫砂、猫粮、水碗、猫窝、猫抓板和航空箱是基础七件。封好窗户、收好线和塑料袋，比买多少玩具都重要。</p>
+      </details>
+      <details>
+        <summary>公寓适合养哪种猫？</summary>
+        <p>英短、美短这类中型短毛猫更适应公寓；布偶粘人，需要更多陪伴；橘猫活泼，最好留出每天陪玩的时间。</p>
+      </details>
+      <details>
+        <summary>掉毛严重怎么办？</summary>
+        <p>短毛猫每周梳两三次，长毛猫每天梳。换毛季增加频率，同时准备粘毛滚筒和空气净化器，比频繁洗澡更有效。</p>
+      </details>
+      <details>
+        <summary>第一次养猫，选幼猫还是成猫？</summary>
+        <p>幼猫需要更多时间照顾和疫苗流程；性格稳定的成猫更适合上班族。领养时优先看性格与健康，而不是只看年龄。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- 更多探索 -->
+<section class="section" id="explore">
+  <div class="container">
+    <div class="sec-head reveal">
+      <div>
+        <h2>更多探索</h2>
+        <p>除了品种和手记，还有几个可以慢慢逛的新页面。</p>
+      </div>
+    </div>
+    <div class="explore-grid">
+      <a class="explore-card reveal d1" href="breeds/compare.htm"><span class="e-num">01</span><h3>品种对比</h3><p>把两只猫放在一起，看体型、活动和护理差异。</p><span class="e-arrow">去对比 →</span></a>
+      <a class="explore-card reveal d2" href="cat_facts.htm"><span class="e-num">02</span><h3>猫咪百科</h3><p>20 条关于猫的身体、感官和行为的冷知识。</p><span class="e-arrow">去涨知识 →</span></a>
+      <a class="explore-card reveal d3" href="tools/budget.htm"><span class="e-num">03</span><h3>养猫预算</h3><p>估算每月固定开销和第一年总成本。</p><span class="e-arrow">算一算 →</span></a>
+      <a class="explore-card reveal d4" href="stories.htm"><span class="e-num">04</span><h3>领养故事</h3><p>三个关于等待、磨合和重新开始的故事。</p><span class="e-arrow">去读故事 →</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 趣味角入口 -->
+<section class="section" style="padding-top:0;">
+  <div class="container">
+    <div class="fun-cta reveal">
+      <div>
+        <h2>猫咪趣味角</h2>
+        <p>给猫起个名字、抽一张今日猫咪签，或者随机认识一只新猫。</p>
+      </div>
+      <a class="btn caramel" href="tools/index.htm#fun">去玩一下 →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <div class="f-brand">屿猫</div>
+      <p class="f-note">认识一只猫，从看它开始。</p>
+    </div>
+    <div class="footer-links">
+      <div><b>逛逛</b><a href="breeds/index.htm">品种图鉴</a><a href="care/index.htm">饲养知识</a><a href="cat_facts.htm">猫咪百科</a><a href="stories.htm">领养故事</a></div>
+      <div><b>参与</b><a href="breeds/compare.htm">品种对比</a><a href="guide/index.htm">选猫指南</a><a href="tools/index.htm">养猫工具</a><a href="account/adopt.htm">领养登记</a></div>
+      <div><b>联系</b><a href="about.htm">关于我们</a><a href="mailto:cat_web@demo.com">cat_web@demo.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 屿猫 · 本站品种资料与饲养建议仅供日常参考。</span><span>猫咪健康问题请咨询执业兽医。</span></div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+
+<script src="assets/js/site.js" defer></script>
+<script>
+// 登录状态
+window.addEventListener('load', function () {
+  var currentUser = localStorage.getItem("currentUser");
+  if (currentUser != null) {
+    document.getElementById("userArea").innerHTML =
+      "<span style='color:#6f6252;font-size:13px;margin-right:6px;'>欢迎，" + currentUser + "</span>" +
+      "<a class='reg' href='javascript:logout()'>退出</a>";
+  }
+});
+function logout() {
+  localStorage.removeItem("currentUser");
+  location.href = "index.htm";
+}
+</script>
+
+</body>
+</html>

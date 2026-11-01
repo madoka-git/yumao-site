@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>注册账号 · 屿猫</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.htm"><span class="logo" aria-hidden="true"><img src="../assets/img/logo.svg" alt=""></span><b>屿猫</b></a>
+    <nav class="nav">
+      <a href="../breeds/index.htm">品种图鉴</a>
+      <a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a>
+      <a href="../guide/index.htm">选猫指南</a>
+      <a href="../tools/index.htm">养猫工具</a>
+      <a href="adopt.htm">领养登记</a>
+    </nav>
+    <div class="top-actions"><a href="login.htm">登录</a><a class="reg" href="register.htm">注册</a></div>
+  </div>
+</div>
+
+<div class="auth-wrap"><img class="auth-doodle" src="../assets/img/doodle/doodle-cat-a.png" alt="">
+  <div class="form-card reveal">
+    <h1>创建账号</h1>
+    <p class="lead">注册成为本站会员，参与领养咨询登记，保存你关注的猫咪。</p>
+
+    <form onsubmit="return register()" style="margin-top:20px;">
+      <div class="field">
+        <label for="username">用户名 <span style="color:#a8442f;">*</span></label>
+        <input class="input" type="text" id="username" name="username" placeholder="请输入用户名（至少 2 个字符）" required>
+      </div>
+      <div class="field">
+        <label for="password">密码 <span style="color:#a8442f;">*</span></label>
+        <input class="input" type="password" id="password" name="password" placeholder="请输入密码（至少 6 位）" required>
+      </div>
+      <div class="field">
+        <label for="password2">确认密码 <span style="color:#a8442f;">*</span></label>
+        <input class="input" type="password" id="password2" name="password2" placeholder="请再次输入密码" required>
+      </div>
+      <div class="field">
+        <label for="email">电子邮箱</label>
+        <input class="input" type="email" id="email" name="email" placeholder="请输入邮箱地址">
+      </div>
+      <div class="field">
+        <label style="display:flex;align-items:center;gap:8px;font-size:13.5px;">
+          <input type="checkbox" id="agree" name="agree" value="yes" style="width:16px;height:16px;accent-color:#92560e;">
+          我已阅读并同意《用户服务条款》
+        </label>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn-submit">注 册</button>
+        <button type="reset" class="btn-reset">重 置</button>
+      </div>
+    </form>
+    <p class="auth-alt">已有账号？<a href="login.htm">去登录</a></p>
+  </div>
+
+  <div class="benefit reveal d1">
+    <h3>注册即享</h3>
+    <ul>
+      <li>参与猫咪领养咨询登记</li>
+      <li>收藏喜欢的猫咪品种</li>
+      <li>定期接收猫咪养护小知识</li>
+    </ul>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="f-brand">屿猫</div><p class="f-note">认识一只猫，从看它开始。</p></div>
+    <div class="footer-links">
+      <div><b>逛逛</b><a href="../breeds/index.htm">品种图鉴</a><a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a><a href="../stories.htm">领养故事</a></div>
+      <div><b>参与</b><a href="../breeds/compare.htm">品种对比</a><a href="../guide/index.htm">选猫指南</a><a href="../tools/index.htm">养猫工具</a><a href="adopt.htm">领养登记</a></div>
+      <div><b>联系</b><a href="../about.htm">关于我们</a><a href="mailto:cat_web@demo.com">cat_web@demo.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 屿猫 · 本站品种资料与饲养建议仅供日常参考。</span><span>猫咪健康问题请咨询执业兽医。</span></div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<script src="../assets/js/site.js" defer></script>
+
+<script>
+function register() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var password2 = document.getElementById("password2").value;
+  var agree = document.getElementById("agree");
+  if (!agree.checked) { alert("请先勾选同意服务条款"); return false; }
+  if (username.length < 2) { alert("用户名至少需要2个字符"); return false; }
+  if (password.length < 6) { alert("密码至少需要6位"); return false; }
+  if (password != password2) { alert("两次输入的密码不一致，请重新输入"); return false; }
+
+  var users = localStorage.getItem("users");
+  if (users == null) { users = "[]"; }
+  var userList = JSON.parse(users);
+  for (var i = 0; i < userList.length; i++) {
+    if (userList[i].username == username) { alert("该用户名已被注册，请换一个"); return false; }
+  }
+  userList.push({ username: username, password: password });
+  localStorage.setItem("users", JSON.stringify(userList));
+  alert("注册成功！请登录");
+  location.href = "login.htm";
+  return false;
+}
+</script>
+
+</body>
+</html>

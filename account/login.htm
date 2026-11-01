@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>用户登录 · 屿猫</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.htm"><span class="logo" aria-hidden="true"><img src="../assets/img/logo.svg" alt=""></span><b>屿猫</b></a>
+    <nav class="nav">
+      <a href="../breeds/index.htm">品种图鉴</a>
+      <a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a>
+      <a href="../guide/index.htm">选猫指南</a>
+      <a href="../tools/index.htm">养猫工具</a>
+      <a href="adopt.htm">领养登记</a>
+    </nav>
+    <div class="top-actions"><a href="login.htm">登录</a><a class="reg" href="register.htm">注册</a></div>
+  </div>
+</div>
+
+<div class="auth-wrap"><img class="auth-doodle" src="../assets/img/doodle/doodle-cat-a.png" alt="">
+  <div class="form-card reveal">
+    <h1>欢迎回来</h1>
+    <p class="lead">登录后可以参与领养咨询登记，也能保存你关注的猫咪。</p>
+
+    <div id="loginArea" style="margin-top:20px;">
+      <form onsubmit="return login()">
+        <div class="field">
+          <label for="username">用户名 <span style="color:#a8442f;">*</span></label>
+          <input class="input" type="text" id="username" name="username" placeholder="请输入用户名" required>
+        </div>
+        <div class="field">
+          <label for="password">密码 <span style="color:#a8442f;">*</span></label>
+          <input class="input" type="password" id="password" name="password" placeholder="请输入密码" required>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">登 录</button>
+        </div>
+      </form>
+      <p class="auth-alt">没有账号？<a href="register.htm">去注册</a></p>
+    </div>
+  </div>
+
+  <div class="benefit reveal d1">
+    <h3>登录后您可以</h3>
+    <ul>
+      <li>参与猫咪领养咨询登记</li>
+      <li>收藏喜欢的猫咪品种</li>
+      <li>留言与站主互动交流</li>
+    </ul>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="f-brand">屿猫</div><p class="f-note">认识一只猫，从看它开始。</p></div>
+    <div class="footer-links">
+      <div><b>逛逛</b><a href="../breeds/index.htm">品种图鉴</a><a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a><a href="../stories.htm">领养故事</a></div>
+      <div><b>参与</b><a href="../breeds/compare.htm">品种对比</a><a href="../guide/index.htm">选猫指南</a><a href="../tools/index.htm">养猫工具</a><a href="adopt.htm">领养登记</a></div>
+      <div><b>联系</b><a href="../about.htm">关于我们</a><a href="mailto:cat_web@demo.com">cat_web@demo.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 屿猫 · 本站品种资料与饲养建议仅供日常参考。</span><span>猫咪健康问题请咨询执业兽医。</span></div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<script src="../assets/js/site.js" defer></script>
+
+<script>
+// 页面加载时检查是否已经登录
+window.addEventListener('load', function () {
+  var currentUser = localStorage.getItem("currentUser");
+  if (currentUser != null) {
+    document.getElementById("loginArea").innerHTML =
+      "<p style='text-align:center;font-size:16px;color:#2b2b2b;'>您已登录为：" + currentUser + "</p>" +
+      "<p style='text-align:center;margin-top:14px;'><a class='btn' href='../index.htm'>返回首页</a></p>" +
+      "<p style='text-align:center;margin-top:10px;'><a href='javascript:logout()'>退出登录</a></p>";
+  }
+});
+// 登录函数：点击"登录"按钮时执行
+function login() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+  var users = localStorage.getItem("users");
+  if (users == null) {
+    alert("还没有注册账号，请先注册");
+    return false;
+  }
+  var userList = JSON.parse(users);
+  for (var i = 0; i < userList.length; i++) {
+    if (userList[i].username == username && userList[i].password == password) {
+      localStorage.setItem("currentUser", username);
+      alert("登录成功，欢迎 " + username + "！");
+      location.href = "../index.htm";
+      return false;
+    }
+  }
+  alert("用户名或密码错误，请重新输入");
+  return false;
+}
+// 退出登录：清除登录状态并刷新页面
+function logout() {
+  localStorage.removeItem("currentUser");
+  location.href = "../index.htm";
+}
+</script>
+
+</body>
+</html>

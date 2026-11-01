@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>养猫工具 · 屿猫</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.htm"><span class="logo" aria-hidden="true"><img src="../assets/img/logo.svg" alt=""></span><b>屿猫</b></a>
+    <nav class="nav">
+      <a href="../breeds/index.htm">品种图鉴</a>
+      <a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a>
+      <a href="../guide/index.htm">选猫指南</a>
+      <a class="on" href="index.htm">养猫工具</a>
+      <a href="../account/adopt.htm">领养登记</a>
+    </nav>
+    <div class="top-actions"><a href="../account/login.htm">登录</a><a class="reg" href="../account/register.htm">注册</a></div>
+  </div>
+</div>
+
+<div class="page-head reveal">
+  <h1>养猫工具</h1>
+  <p>三个小计算器，外加三个猫咪小玩法。不用注册，结果仅供参考。</p>
+</div>
+
+<div class="tool-grid">
+  <section class="tool-card reveal d1">
+    <h2>每日喂食量估算</h2>
+    <p class="desc">按体重、年龄阶段和活动量估算每日猫粮克数，换粮或控制体重时有个起点。</p>
+    <div class="calc-row"><label for="weight">体重（kg）</label><input id="weight" type="number" min="0.3" max="12" step="0.1" value="4.5"></div>
+    <div class="calc-row"><label for="stage">年龄阶段</label>
+      <select id="stage">
+        <option value="2.5">幼猫（4–12 月）</option>
+        <option value="1.2" selected>成猫</option>
+        <option value="1.1">老年猫（7 岁以上）</option>
+      </select>
+    </div>
+    <div class="calc-row"><label for="activity">活动量</label>
+      <select id="activity">
+        <option value="0.9">偏静，大部分时间睡觉</option>
+        <option value="1" selected>正常</option>
+        <option value="1.15">活泼，每天跑跳</option>
+      </select>
+    </div>
+    <div class="calc-out"><b id="foodOut">—</b><span>克 / 天</span></div>
+    <p class="tool-note">按静息能量 RER=70×体重^0.75 估算，再乘阶段与活动系数，最后按 3.8 kcal/g 换算成干粮克数。不同猫粮热量不同，请以包装建议为准。</p>
+  </section>
+
+  <section class="tool-card reveal d2">
+    <h2>猫龄换算成人龄</h2>
+    <p class="desc">猫的成长速度和人不一样：第一年约等于人类 15 岁，第二年 24 岁，之后每猫年约 4 人年。</p>
+    <div class="calc-row"><label for="catAge">猫龄（年）</label><input id="catAge" type="number" min="0.1" max="30" step="0.5" value="2"></div>
+    <div class="calc-out"><b id="ageOut">—</b><span>岁（人类年龄）</span></div>
+    <p class="tool-note">换算用于理解猫的生命阶段：7 岁后进入老年期，建议每年体检一次；10 岁后建议每半年一次。</p>
+  </section>
+</div>
+
+<div class="tool-grid" style="grid-template-columns:1fr; padding-top:0;">
+  <section class="tool-card reveal">
+    <h2>养猫预算估算</h2>
+    <p class="desc">把猫粮、猫砂、疫苗和一次性用品放在一起，估算每月固定开销和第一年总成本。</p>
+    <div class="form-actions"><a class="btn caramel" href="budget.htm">打开预算计算器 →</a></div>
+  </section>
+</div>
+
+<div class="fun-head reveal" id="fun">
+  <h2>猫咪趣味角</h2>
+  <p>起名、抽运势、随机认识一只猫。认真养猫之余，也可以玩一下。</p>
+</div>
+
+<div class="tool-grid fun-grid">
+  <section class="tool-card reveal d1">
+    <h2>猫咪名字生成器</h2>
+    <p class="desc">先选一个风格，再生成三个不重复的名字。看到喜欢的，记下来就好。</p>
+    <div class="calc-row"><label for="nameStyle">风格</label>
+      <select id="nameStyle">
+        <option value="jp">日系小可爱</option>
+        <option value="food">食物系</option>
+        <option value="art">文艺系</option>
+        <option value="silly">沙雕系</option>
+      </select>
+    </div>
+    <button class="btn caramel fun-btn" id="genNames" type="button">生成三个名字</button>
+    <ul class="name-list" id="nameList" aria-live="polite">
+      <li>麻薯</li><li>柚子</li><li>团子</li>
+    </ul>
+    <p class="tool-note">名字只是开始，叫得顺口、猫咪能记住最重要。</p>
+  </section>
+
+  <section class="tool-card reveal d2">
+    <h2>今日猫咪运势</h2>
+    <p class="desc">按日期抽一张猫咪签，看看今天适合做什么、适合吃什么。</p>
+    <button class="btn caramel fun-btn" id="drawFortune" type="button">抽取今日运势</button>
+    <div class="fortune-card" id="fortuneCard" aria-live="polite">
+      <p class="fortune-date" id="fortuneDate">—</p>
+      <div class="fortune-grade" id="fortuneGrade">中吉</div>
+      <div class="fortune-stars" id="fortuneStars">★★★☆☆</div>
+      <dl class="fortune-list">
+        <div><dt>宜</dt><dd id="fortuneYi">发呆、晒太阳</dd></div>
+        <div><dt>忌</dt><dd id="fortuneJi">空腹出门</dd></div>
+        <div><dt>幸运物</dt><dd id="fortuneItem">纸箱</dd></div>
+        <div><dt>猫言猫语</dt><dd id="fortuneQuote">今天也要好好吃饭。</dd></div>
+      </dl>
+    </div>
+    <p class="tool-note">同一天抽到的是同一签；明天再来会变。纯属娱乐，不构成任何建议。</p>
+  </section>
+
+  <section class="tool-card reveal d3">
+    <h2>随机认识一只猫</h2>
+    <p class="desc">从 12 种猫里随机抽一张，看看今天和你最有眼缘的是谁。</p>
+    <button class="btn caramel fun-btn" id="drawBreed" type="button">抽一只猫</button>
+    <div class="breed-draw" id="breedDraw" aria-live="polite">
+      <img id="drawImg" src="../assets/img/breeds/british_shorthair.jpg" alt="英国短毛猫">
+      <div class="breed-draw-body">
+        <b id="drawName">英国短毛猫</b>
+        <span id="drawMeta">短毛 · 中型 · 适合公寓</span>
+        <a id="drawLink" href="../breeds/british.htm">看它的档案 →</a>
+      </div>
+    </div>
+    <p class="tool-note">抽到不喜欢的也别急，点“再抽一只”就好。</p>
+  </section>
+</div>
+
+<div class="tool-grid" style="grid-template-columns:1fr; padding-top:0;">
+  <section class="tool-card reveal">
+    <h2>常见问题速查</h2>
+    <div class="two-col" style="margin-top:12px;">
+      <div>
+        <h3 style="font-size:16px;margin-bottom:8px;">一天喂几顿？</h3>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.9;">幼猫 4–5 顿，成猫 2–3 顿，老年猫 2 顿。定时定量比自由采食更容易控制体重。</p>
+      </div>
+      <div>
+        <h3 style="font-size:16px;margin-bottom:8px;">水喝多少算正常？</h3>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.9;">大约每天 40–60 ml/kg。突然增加或减少都要留意，尤其是老年猫。</p>
+      </div>
+    </div>
+    <div class="form-actions"><a class="btn ghost" href="../care/index.htm">看完整饲养手记 →</a></div>
+  </section>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="f-brand">屿猫</div><p class="f-note">认识一只猫，从看它开始。</p></div>
+    <div class="footer-links">
+      <div><b>逛逛</b><a href="../breeds/index.htm">品种图鉴</a><a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a><a href="../stories.htm">领养故事</a></div>
+      <div><b>参与</b><a href="../breeds/compare.htm">品种对比</a><a href="../guide/index.htm">选猫指南</a><a href="index.htm">养猫工具</a><a href="../account/adopt.htm">领养登记</a></div>
+      <div><b>联系</b><a href="../about.htm">关于我们</a><a href="mailto:cat_web@demo.com">cat_web@demo.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 屿猫 · 本站品种资料与饲养建议仅供日常参考。</span><span>猫咪健康问题请咨询执业兽医。</span></div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<script src="../assets/js/site.js" defer></script>
+
+<script>
+(function () {
+  /* 两个计算器 */
+  var weight = document.getElementById('weight');
+  var stage = document.getElementById('stage');
+  var activity = document.getElementById('activity');
+  var foodOut = document.getElementById('foodOut');
+
+  function calcFood() {
+    var w = parseFloat(weight.value || '0');
+    if (!w || w <= 0) { foodOut.textContent = '—'; return; }
+    var rer = 70 * Math.pow(w, 0.75);
+    var kcal = rer * parseFloat(stage.value) * parseFloat(activity.value);
+    foodOut.textContent = Math.round(kcal / 3.8);
+  }
+  [weight, stage, activity].forEach(function (el) { el.addEventListener('input', calcFood); el.addEventListener('change', calcFood); });
+  calcFood();
+
+  var catAge = document.getElementById('catAge');
+  var ageOut = document.getElementById('ageOut');
+  function calcAge() {
+    var a = parseFloat(catAge.value || '0');
+    if (!a || a <= 0) { ageOut.textContent = '—'; return; }
+    var human;
+    if (a <= 1) human = a * 15;
+    else if (a <= 2) human = 15 + (a - 1) * 9;
+    else human = 24 + (a - 2) * 4;
+    ageOut.textContent = Math.round(human);
+  }
+  catAge.addEventListener('input', calcAge);
+  calcAge();
+
+  /* 功能一：名字生成器 */
+  var namePools = {
+    jp: ['小町', '柚子', '麻薯', '团子', '铃铛', '小满', '桃桃', '奈奈', '小春', '阿福'],
+    food: ['布丁', '可可', '拿铁', '芝麻', '汤圆', '栗子', '奶盖', '饭团', '焦糖', '豆腐'],
+    art: ['山茶', '云朵', '晚风', '青柠', '月光', '白露', '听雨', '星野', '南栀', '初雪'],
+    silly: ['大橘', '猪咪', '猫饼', '煤气罐', '拖鞋', '土豆', '咕噜', '局长', '饭桶', '芝麻糊']
+  };
+  var nameStyle = document.getElementById('nameStyle');
+  var nameList = document.getElementById('nameList');
+
+  function genNames() {
+    var pool = namePools[nameStyle.value].slice();
+    var picked = [];
+    while (picked.length < 3 && pool.length) {
+      var i = Math.floor(Math.random() * pool.length);
+      picked.push(pool.splice(i, 1)[0]);
+    }
+    nameList.innerHTML = picked.map(function (n) { return '<li>' + n + '</li>'; }).join('');
+  }
+  document.getElementById('genNames').addEventListener('click', genNames);
+  nameStyle.addEventListener('change', genNames);
+
+  /* 功能二：今日运势（按日期固定） */
+  var grades = ['大吉', '中吉', '小吉', '平', '小凶带吉'];
+  var yiPool = ['晒太阳', '睡到自然醒', '巡视领地', '偷看窗外', '吃一顿好的', '和主人贴贴', '追一只逗猫棒', '整理毛发'];
+  var jiPool = ['空腹出门', '被强行抱抱', '跳上高处', '喝洗澡水', '半夜跑酷', '偷吃人类零食', '和吸尘器对峙'];
+  var itemPool = ['纸箱', '猫抓板', '逗猫棒', '毛毯', '小太阳', '猫薄荷', '纸袋', '窗台'];
+  var quotePool = [
+    '今天也要好好吃饭。',
+    '先睡一觉，事情明天再说。',
+    '猫不需要计划，猫就是计划。',
+    '被摸头的时候，记得咕噜。',
+    '世界很吵，先晒会儿太阳。',
+    '你忙你的，我陪你待着。'
+  ];
+  function hashDate(s) {
+    var h = 0;
+    for (var i = 0; i < s.length; i++) { h = ((h << 5) - h + s.charCodeAt(i)) | 0; }
+    return Math.abs(h);
+  }
+  function drawFortune() {
+    var now = new Date();
+    var key = now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate();
+    var n = hashDate(key);
+    var i = n % grades.length;
+    document.getElementById('fortuneDate').textContent = key + ' · 今日猫咪签';
+    document.getElementById('fortuneGrade').textContent = grades[i];
+    var stars = 3 + (n % 3);
+    document.getElementById('fortuneStars').textContent = '★★★★★'.slice(0, stars) + '☆☆☆☆☆'.slice(0, 5 - stars);
+    document.getElementById('fortuneYi').textContent = yiPool[n % yiPool.length];
+    document.getElementById('fortuneJi').textContent = jiPool[(n + 3) % jiPool.length];
+    document.getElementById('fortuneItem').textContent = itemPool[(n + 5) % itemPool.length];
+    document.getElementById('fortuneQuote').textContent = quotePool[(n + 2) % quotePool.length];
+    var card = document.getElementById('fortuneCard');
+    card.classList.remove('on');
+    void card.offsetWidth;
+    card.classList.add('on');
+  }
+  document.getElementById('drawFortune').addEventListener('click', drawFortune);
+  document.getElementById('fortuneDate').textContent = new Date().toLocaleDateString('zh-CN') + ' · 点按钮抽签';
+
+  /* 功能三：随机品种卡 */
+  var breeds = [
+    ['英国短毛猫', 'british_shorthair.jpg', '短毛 · 中型 · 适合公寓', 'british'],
+    ['布偶猫', 'ragdoll.jpg', '长毛 · 大型 · 需要陪伴', 'ragdoll'],
+    ['橘猫', 'orange_cat.jpg', '短毛 · 易胖 · 适合新手', 'orange_cat'],
+    ['美短起司', 'american_shorthair.jpg', '短毛 · 中型 · 爱互动', 'american_shorthair'],
+    ['缅因猫', 'maine_coon.jpg', '长毛 · 大型 · 需要空间', 'maine_coon'],
+    ['暹罗猫', 'siamese.jpg', '短毛 · 中型 · 爱交流', 'siamese'],
+    ['加菲猫', 'exotic_shorthair.jpg', '短毛 · 中型 · 需护眼', 'exotic_shorthair'],
+    ['金渐层', 'golden_british.jpg', '短毛 · 中型 · 适合公寓', 'golden_british'],
+    ['波斯猫', 'persian.jpg', '长毛 · 中型 · 需梳毛', 'persian'],
+    ['无毛猫', 'sphynx.jpg', '无毛 · 中型 · 需保暖', 'sphynx'],
+    ['德文卷毛猫', 'devon_rex.jpg', '卷毛 · 小型 · 爱互动', 'devon_rex'],
+    ['苏格兰折耳猫', 'scottish_fold.jpg', '短毛 · 中型 · 需关注骨骼', 'scottish_fold']
+  ];
+  var lastBreed = -1;
+  function drawBreed() {
+    var i;
+    do { i = Math.floor(Math.random() * breeds.length); } while (breeds.length > 1 && i === lastBreed);
+    lastBreed = i;
+    var b = breeds[i];
+    document.getElementById('drawImg').src = '../assets/img/breeds/' + b[1];
+    document.getElementById('drawImg').alt = b[0];
+    document.getElementById('drawName').textContent = b[0];
+    document.getElementById('drawMeta').textContent = b[2];
+    document.getElementById('drawLink').href = '../breeds/' + b[3] + '.htm';
+    var box = document.getElementById('breedDraw');
+    box.classList.remove('on');
+    void box.offsetWidth;
+    box.classList.add('on');
+  }
+  document.getElementById('drawBreed').addEventListener('click', drawBreed);
+  genNames();
+  drawFortune();
+  drawBreed();
+})();
+</script>
+
+</body>
+</html>

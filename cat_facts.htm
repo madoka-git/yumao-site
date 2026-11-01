@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>猫咪百科 · 屿猫</title>
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.htm"><span class="logo" aria-hidden="true"><img src="assets/img/logo.svg" alt=""></span><b>屿猫</b></a>
+    <nav class="nav">
+      <a href="breeds/index.htm">品种图鉴</a>
+      <a href="care/index.htm">饲养知识</a>
+      <a class="on" href="cat_facts.htm">猫咪百科</a>
+      <a href="guide/index.htm">选猫指南</a>
+      <a href="tools/index.htm">养猫工具</a>
+      <a href="account/adopt.htm">领养登记</a>
+    </nav>
+    <div class="top-actions"><a href="account/login.htm">登录</a><a class="reg" href="account/register.htm">注册</a></div>
+  </div>
+</div>
+
+<div class="crumb"><a href="index.htm">首页</a> ／ <strong>猫咪百科</strong></div>
+
+
+<div class="page-head reveal">
+  <h1>猫咪百科</h1>
+  <p>20 条关于猫的身体、感官、行为和养护的冷知识。知道得越多，越不容易误会它。</p>
+</div>
+
+<div class="container">
+  <figure class="facts-hero reveal">
+    <img src="assets/img/care/facts.jpg" alt="猫在喝水龙头的水">
+    <figcaption>猫对流动水更感兴趣，这不是任性，是祖先留下的本能。</figcaption>
+  </figure>
+
+  <section class="fact-daily reveal" id="dailyFact">
+    <span class="fd-label">今日冷知识</span>
+    <h2 id="fdTitle">每只猫的鼻纹都不同</h2>
+    <p id="fdBody">猫的鼻纹像人的指纹一样独特，理论上可以用来识别个体。</p>
+    <button class="btn-reset" id="nextFact" type="button">换一条</button>
+  </section>
+
+  <div class="care-filter reveal" role="group" aria-label="冷知识分类">
+      <button class="on" type="button" data-filter="all">全部 20 条</button>
+      <button class="" type="button" data-filter="body">身体</button>
+      <button class="" type="button" data-filter="senses">感官</button>
+      <button class="" type="button" data-filter="behavior">行为</button>
+      <button class="" type="button" data-filter="history">历史</button>
+      <button class="" type="button" data-filter="care">养护</button>
+  </div>
+
+  <div class="fact-grid">
+      <article class="fact-card reveal" data-cat="body">
+        <span class="fact-no">01</span>
+        <span class="fact-tag">身体</span>
+        <h3>每只猫的鼻纹都不同</h3>
+        <p>猫的鼻纹像人的指纹一样独特，理论上可以用来识别个体，只是日常没人真的去比对。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="body">
+        <span class="fact-no">02</span>
+        <span class="fact-tag">身体</span>
+        <h3>猫的骨头比人多</h3>
+        <p>成年猫大约有 230 块骨头，人类是 206 块。猫的锁骨退化，所以能钻进很窄的缝隙。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="senses">
+        <span class="fact-no">03</span>
+        <span class="fact-tag">感官</span>
+        <h3>耳朵可以独立转动</h3>
+        <p>猫的两只耳朵能分别转向不同声源，帮助它精确定位声音来自哪里。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="senses">
+        <span class="fact-no">04</span>
+        <span class="fact-tag">感官</span>
+        <h3>胡须是精密传感器</h3>
+        <p>胡须根部布满神经，能感知气流、宽度和距离，帮助猫在暗处判断缝隙能不能通过。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="senses">
+        <span class="fact-no">05</span>
+        <span class="fact-tag">感官</span>
+        <h3>猫尝不出甜味</h3>
+        <p>猫的甜味受体基因失去功能，所以对甜食没有真正的味觉；它可能喜欢奶油的口感，而不是甜味。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="senses">
+        <span class="fact-no">06</span>
+        <span class="fact-tag">感官</span>
+        <h3>瞳孔不只是情绪</h3>
+        <p>光线变强时瞳孔缩成细线，变弱时放大；情绪也会影响瞳孔大小，但不能只靠瞳孔判断心情。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="behavior">
+        <span class="fact-no">07</span>
+        <span class="fact-tag">行为</span>
+        <h3>呼噜不只表示开心</h3>
+        <p>猫在放松时会呼噜，在紧张、疼痛或自我安抚时也可能呼噜。要看身体语言一起判断。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="body">
+        <span class="fact-no">08</span>
+        <span class="fact-tag">身体</span>
+        <h3>猫每天睡 12–16 小时</h3>
+        <p>幼猫和老年猫睡得更多。睡眠是猫保存能量和恢复的方式，不要因为白天睡得多就以为它懒。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="body">
+        <span class="fact-no">09</span>
+        <span class="fact-tag">身体</span>
+        <h3>猫的跳跃力很强</h3>
+        <p>健康猫可以跳到接近自己身高数倍的高度，所以猫爬架和柜顶对它是纵向空间，不是装饰。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="body">
+        <span class="fact-no">10</span>
+        <span class="fact-tag">身体</span>
+        <h3>尾巴帮助平衡</h3>
+        <p>尾巴在跳跃和转身时帮助调整平衡，也是情绪信号：竖起、炸毛、快速摆动含义都不同。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="body">
+        <span class="fact-no">11</span>
+        <span class="fact-tag">身体</span>
+        <h3>猫主要靠肉垫排汗</h3>
+        <p>猫的汗腺集中在肉垫，天热时会张嘴呼吸散热；如果安静时也张嘴喘，要警惕呼吸问题。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="body">
+        <span class="fact-no">12</span>
+        <span class="fact-tag">身体</span>
+        <h3>第三眼睑是健康信号</h3>
+        <p>猫有瞬膜（第三眼睑），平时藏在眼角。生病、脱水或消瘦时可能露出来，值得检查。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="history">
+        <span class="fact-no">13</span>
+        <span class="fact-tag">历史</span>
+        <h3>家猫的祖先是非洲野猫</h3>
+        <p>现代家猫主要源自非洲野猫（Felis lybica），不是我们从欧洲野猫驯化来的。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="history">
+        <span class="fact-no">14</span>
+        <span class="fact-tag">历史</span>
+        <h3>猫接近人类约一万年</h3>
+        <p>农业发展带来鼠害，猫因此靠近人类聚落。猫的驯化更像“自己选择留下”，而不是被完全驯服。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="behavior">
+        <span class="fact-no">15</span>
+        <span class="fact-tag">行为</span>
+        <h3>喵叫主要说给人听</h3>
+        <p>成年猫之间很少用喵喵叫交流；家猫对人喵叫，是在长期相处中学会的沟通方式。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="behavior">
+        <span class="fact-no">16</span>
+        <span class="fact-tag">行为</span>
+        <h3>踩奶是幼年动作的延续</h3>
+        <p>小猫吃奶时会踩妈妈的肚子，成年猫在放松、舒服时保留这个动作，也可能伴随时呼噜。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="behavior">
+        <span class="fact-no">17</span>
+        <span class="fact-tag">行为</span>
+        <h3>纸箱让猫有安全感</h3>
+        <p>狭小、封闭、可观察外面的空间能让猫降低压力。新猫到家时，一个纸箱往往比昂贵猫窝更有用。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="behavior">
+        <span class="fact-no">18</span>
+        <span class="fact-tag">行为</span>
+        <h3>猫薄荷反应看基因</h3>
+        <p>大约一半到七成猫对猫薄荷有反应，这是遗传的；没有反应不代表猫不快乐。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="care">
+        <span class="fact-no">19</span>
+        <span class="fact-tag">养护</span>
+        <h3>猫天生口渴感较弱</h3>
+        <p>猫的祖先从猎物中获取水分，主动喝水意愿低。流动水、多个水碗和湿粮都能帮助它多喝水。</p>
+      </article>
+      <article class="fact-card reveal" data-cat="care">
+        <span class="fact-no">20</span>
+        <span class="fact-tag">养护</span>
+        <h3>胡须不能剪</h3>
+        <p>剪掉胡须会让猫失去重要的空间感知工具，可能变得犹豫、碰撞或不安。掉落的胡须会自然更新。</p>
+      </article>
+  </div>
+
+  <div class="newpage-links reveal">
+    <a class="btn ghost" href="breeds/compare.htm">去对比猫咪品种 →</a>
+    <a class="btn ghost" href="stories.htm">看领养故事 →</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  var cards = Array.prototype.slice.call(document.querySelectorAll('.fact-card'));
+  var btns = document.querySelectorAll('.care-filter button');
+  btns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      btns.forEach(function (b) { b.classList.remove('on'); });
+      btn.classList.add('on');
+      var f = btn.getAttribute('data-filter');
+      cards.forEach(function (card) {
+        card.classList.toggle('is-hidden', f !== 'all' && card.getAttribute('data-cat') !== f);
+      });
+    });
+  });
+
+  var daily = document.getElementById('dailyFact');
+  function randomFact() {
+    var c = cards[Math.floor(Math.random() * cards.length)];
+    document.getElementById('fdTitle').textContent = c.querySelector('h3').textContent;
+    document.getElementById('fdBody').textContent = c.querySelector('p').textContent;
+    daily.classList.remove('on');
+    void daily.offsetWidth;
+    daily.classList.add('on');
+  }
+  document.getElementById('nextFact').addEventListener('click', randomFact);
+  randomFact();
+})();
+</script>
+
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="f-brand">屿猫</div><p class="f-note">认识一只猫，从看它开始。</p></div>
+    <div class="footer-links">
+      <div><b>逛逛</b><a href="breeds/index.htm">品种图鉴</a><a href="care/index.htm">饲养知识</a><a href="cat_facts.htm">猫咪百科</a><a href="stories.htm">领养故事</a></div>
+      <div><b>参与</b><a href="breeds/compare.htm">品种对比</a><a href="guide/index.htm">选猫指南</a><a href="tools/index.htm">养猫工具</a><a href="account/adopt.htm">领养登记</a></div>
+      <div><b>联系</b><a href="about.htm">关于我们</a><a href="mailto:cat_web@demo.com">cat_web@demo.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 屿猫 · 本站品种资料与饲养建议仅供日常参考。</span><span>猫咪健康问题请咨询执业兽医。</span></div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<script src="assets/js/site.js" defer></script>
+
+</body>
+</html>

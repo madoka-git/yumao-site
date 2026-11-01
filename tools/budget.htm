@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>养猫预算 · 屿猫</title>
+<link rel="icon" type="image/svg+xml" href="../assets/img/favicon.svg">
+<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/anim.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="../index.htm"><span class="logo" aria-hidden="true"><img src="../assets/img/logo.svg" alt=""></span><b>屿猫</b></a>
+    <nav class="nav">
+      <a href="../breeds/index.htm">品种图鉴</a>
+      <a href="../care/index.htm">饲养知识</a>
+      <a href="../cat_facts.htm">猫咪百科</a>
+      <a href="../guide/index.htm">选猫指南</a>
+      <a class="on" href="../tools/index.htm">养猫工具</a>
+      <a href="../account/adopt.htm">领养登记</a>
+    </nav>
+    <div class="top-actions"><a href="../account/login.htm">登录</a><a class="reg" href="../account/register.htm">注册</a></div>
+  </div>
+</div>
+
+<div class="crumb"><a href="../index.htm">首页</a> ／ <a href="index.htm">养猫工具</a> ／ <strong>养猫预算</strong></div>
+
+
+<div class="page-head reveal">
+  <h1>养猫预算</h1>
+  <p>把猫粮、猫砂、医疗和一次性用品放在一起，估算每月固定开销和第一年总成本。</p>
+</div>
+
+<div class="budget-wrap">
+  <section class="tool-card reveal">
+    <h2>每月开销</h2>
+    <p class="desc">选一个接近你实际情况的档位，结果会实时更新。</p>
+    <div class="calc-row"><label for="food">猫粮档位</label>
+      <select id="food">
+        <option value="150">经济型 · 约 150 元/月</option>
+        <option value="300" selected>中档 · 约 300 元/月</option>
+        <option value="500">高端/处方粮 · 约 500 元/月</option>
+      </select>
+    </div>
+    <div class="calc-row"><label for="wet">湿粮/罐头</label>
+      <select id="wet">
+        <option value="0">基本不喂</option>
+        <option value="120" selected>每周 2–3 次 · 约 120 元/月</option>
+        <option value="300">每天喂 · 约 300 元/月</option>
+      </select>
+    </div>
+    <div class="calc-row"><label for="litter">猫砂</label>
+      <select id="litter">
+        <option value="60">膨润土 · 约 60 元/月</option>
+        <option value="100" selected>豆腐砂 · 约 100 元/月</option>
+        <option value="80">混合砂 · 约 80 元/月</option>
+      </select>
+    </div>
+    <div class="calc-row"><label for="health">疫苗/驱虫</label>
+      <select id="health">
+        <option value="600">基础 · 约 600 元/年</option>
+        <option value="1000" selected>常规 · 约 1000 元/年</option>
+        <option value="1500">含体检 · 约 1500 元/年</option>
+      </select>
+    </div>
+    <div class="calc-row"><label for="emergency">医疗备用</label>
+      <select id="emergency">
+        <option value="0">暂时不设</option>
+        <option value="100" selected>每月 100 元</option>
+        <option value="200">每月 200 元</option>
+      </select>
+    </div>
+    <div class="calc-row"><label for="toys">玩具/用品</label>
+      <select id="toys">
+        <option value="50">约 50 元/月</option>
+        <option value="100" selected>约 100 元/月</option>
+        <option value="150">约 150 元/月</option>
+      </select>
+    </div>
+    <div class="calc-row"><label for="startup">一次性启动</label>
+      <select id="startup">
+        <option value="800">基础 · 约 800 元</option>
+        <option value="1500" selected>常规 · 约 1500 元</option>
+        <option value="2500">较齐全 · 约 2500 元</option>
+      </select>
+    </div>
+    <p class="tool-note">猫砂盆、猫窝、航空箱、食碗、猫抓板等计入一次性启动；疫苗和驱虫按年折算进每月。</p>
+  </section>
+
+  <section class="budget-result reveal">
+    <p class="budget-label">每月固定开销</p>
+    <b class="budget-monthly" id="monthlyTotal">¥0</b>
+    <p class="budget-label" style="margin-top:18px;">第一年预计总成本</p>
+    <b class="budget-year" id="yearTotal">¥0</b>
+    <p class="budget-hint">= 每月开销 × 12 + 一次性启动</p>
+    <div class="budget-breakdown" id="budgetBreakdown"></div>
+    <div class="tip" style="margin-top:14px;">医疗备用金不是“必须花掉”的钱，而是遇到突发情况时不至于慌。预算有限时，优先保证猫粮、猫砂和疫苗驱虫。</div>
+  </section>
+</div>
+
+<div class="tool-grid" style="grid-template-columns:1fr; padding-top:0;">
+  <section class="tool-card reveal">
+    <h2>怎么把预算花得更值</h2>
+    <ul class="checks">
+      <li>猫粮看配方和营养标准，不必盲目追求最贵。</li>
+      <li>猫砂盆、猫抓板一次买大一点，比反复换更省。</li>
+      <li>疫苗和驱虫按兽医建议做，不要为了省钱跳过。</li>
+      <li>玩具不必多，逗猫棒和纸箱的性价比最高。</li>
+      <li>预留医疗备用金，比买更多衣服和零食重要。</li>
+    </ul>
+    <div class="form-actions"><a class="btn ghost" href="index.htm">← 返回养猫工具</a></div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var ids = ['food', 'wet', 'litter', 'health', 'emergency', 'toys'];
+  var labels = { food: '猫粮', wet: '湿粮', litter: '猫砂', health: '疫苗/驱虫', emergency: '医疗备用', toys: '玩具用品' };
+  var startup = document.getElementById('startup');
+
+  function calc() {
+    var vals = {};
+    ids.forEach(function (id) { vals[id] = parseFloat(document.getElementById(id).value || '0'); });
+    var monthly = vals.food + vals.wet + vals.litter + vals.health / 12 + vals.emergency + vals.toys;
+    var year = monthly * 12 + parseFloat(startup.value || '0');
+    document.getElementById('monthlyTotal').textContent = '¥' + Math.round(monthly).toLocaleString();
+    document.getElementById('yearTotal').textContent = '¥' + Math.round(year).toLocaleString();
+
+    var max = Math.max.apply(null, ids.map(function (id) {
+      return id === 'health' ? vals[id] / 12 : vals[id];
+    }));
+    document.getElementById('budgetBreakdown').innerHTML = ids.map(function (id) {
+      var v = id === 'health' ? vals[id] / 12 : vals[id];
+      var w = max ? Math.max(2, Math.round(v / max * 100)) : 0;
+      return '<div class="budget-row"><span>' + labels[id] + '</span><div class="budget-bar"><i style="width:' + w + '%"></i></div><b>¥' + Math.round(v) + '</b></div>';
+    }).join('');
+  }
+  ids.concat(['startup']).forEach(function (id) {
+    document.getElementById(id).addEventListener('change', calc);
+  });
+  calc();
+})();
+</script>
+
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div><div class="f-brand">屿猫</div><p class="f-note">认识一只猫，从看它开始。</p></div>
+    <div class="footer-links">
+      <div><b>逛逛</b><a href="../breeds/index.htm">品种图鉴</a><a href="../care/index.htm">饲养知识</a><a href="../cat_facts.htm">猫咪百科</a><a href="../stories.htm">领养故事</a></div>
+      <div><b>参与</b><a href="../breeds/compare.htm">品种对比</a><a href="../guide/index.htm">选猫指南</a><a href="../tools/index.htm">养猫工具</a><a href="../account/adopt.htm">领养登记</a></div>
+      <div><b>联系</b><a href="../about.htm">关于我们</a><a href="mailto:cat_web@demo.com">cat_web@demo.com</a></div>
+    </div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 屿猫 · 本站品种资料与饲养建议仅供日常参考。</span><span>猫咪健康问题请咨询执业兽医。</span></div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="回到顶部">↑</button>
+<script src="../assets/js/site.js" defer></script>
+
+</body>
+</html>
